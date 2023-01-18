@@ -1,0 +1,25 @@
+<div class="subpage">
+    <h1 class="center page-title">Change Account Information</h1>
+    <form action="/account/change-account-info/@USERNAME@" method="POST" class="center">
+        <h4 class="center">Main information</h4>
+        <label for="username"><h6>Change Username</h6></label><input value="@USERNAME@" placeholder="JaneDoe123" type="text" name="username">
+        <label for="first_name"><h6>First Name</h6></label><input value="@FIRST_NAME@" placeholder="Jane" type="text" name="first_name">
+        <label for="last_name"><h6>Last Name</h6></label><input value="@LAST_NAME@" placeholder="Doe" type="text" name="last_name">
+        <br>
+        <h4 class="center">Contact Information</h4>
+        <label for="email"><h6>Email</h6></label><input value="@EMAIL@" placeholder="JaneDoe@domain.com" type="text" name="email">
+        <label for="phone_number"><h6>Phone Number</h6></label><input value="@PHONE_NUMBER@" placeholder="(012) 345-6789" type="text" name="phone_number">
+        <br>
+        <label for="profile_picture"><h6>Profile Picture</h6><input type="file" name="profile_picture" id="select-profile_picture" accept="image/jpg, image/jpeg, image/png"></label>
+        <img src="" id="create-account_temp_display" class="temp_pic_display circle">
+        <p id="no-file">No File Chosen</p>
+        <br>
+        <h4 class="center">Change Password</h4>
+        <label for="new_password"><h6>Change Your Password</h6></label><input placeholder="**********" type="password" name="new_password">
+        <label for="confirm_new_password"><h6>Confirm Password Change</h6></label><input placeholder="**********" type="password" name="confirm_new_password ">
+        <br>
+        <label for="password"><h6>Enter Your Password</h6></label><input placeholder="**********" type="password" name="password" required>
+        <br>
+        <input type="submit" class="pointer">
+    </form>
+</div>

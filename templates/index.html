@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script> -->
+    <link rel="stylesheet" href="../static/css/animate.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
+    <link rel="stylesheet" href="../static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/components.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/main.css" type="text/css">
+    <link rel="icon" href="../static/pictures/tsaxking_logo.jpg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+    <script type="text/javascript" src="../static/js/functions.js"></script>
+    <script type="module" src="../static/js/index.js"></script>
+    <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Welcome to King Music Studio with Taylor Reese King! If you need a composer, saxophone instructor, or a sound engineer, I'm your guy!">
+    <meta name="keywords" content="music, composition, saxophone, sound engineering, lessons, private, composer, instructor, teacher, music instructor, music teacher, music lessons, recording studio, recording, sound, mixing, boise, idaho, music lessons boise,  music lessons id, saxaophone,  music lessons idaho, saxophone lessons idaho, saxophone lessons id, saxaphone lessons id, saxaphone lessons idaho, saxophone lessons boise, saxaphone lessons boise, composition lessons idaho, composition lessons id, composition lessons boise, recording studio boise, recording studio idaho, recording idaho, recording boise, taylor king, taylor reese king, tsaxking, taylor king boise, taylor king saxophone, taylor saxophone, taylor boise, taylor music boise">
+    <meta name="author" content="Taylor Reese King">
+    <title>King Music Studio</title>
+</head>
+
+<body class="tabs-6">
+    <div id="notifications">
+
+    </div>
+    <header>
+        <div id="heading">
+            <div id="web_block" class="animate__delay-block">
+                <i class="material-icons show_nav web_block_child hover_grow index_animation animate__animated animate__bounceInLeft animate__delay-var" id="mobile_nav">menu</i>
+                <a data-link="nav" id="logo" class="web_block_child hover_grow circle index_animation animate__animated animate__bounceInLeft animate__delay-var" href="/home" title="Home"></a>
+                <a href="https://facebook.com/taylorkingmusicstudio" class="fab fa-facebook index_link hover_grow circle index_animation animate__animated animate__bounceInLeft animate__delay-var" target="_blank"></a>
+                <a href="https://www.instagram.com/t.sax.king/" class="fab fa-instagram index_link hover_grow circle index_animation animate__animated animate__bounceInLeft animate__delay-var" target="_blank"></a>
+            </div>
+            <div id="banner_box" class="animate__delay-reverse_block">
+                <a href="/covid-19" data-link="nav" title="COVID-19 Policies" class="material-icons banner_button pointer index_animation animate__animated animate__bounceInRight note hover_grow animate__delay-var" id="covid_button">error</a>
+                <a href="/contact" data-link="nav" title="Contact Me!" class="material-icons banner_button pointer index_animation animate__animated animate__bounceInRight hover_grow animate__delay-var" id="contact_button">call</a>
+                <i class="material-icons pointer banner_button index_animation animate__animated animate__bounceInRight hover_primaryLight hover_grow animate__delay-var open-popup" data-popup="new_features" id="show_new_things_dropdown" title="New Features">new_releases</i>
+                <i class="material-icons pointer banner_button index_animation animate__animated animate__bounceInRight hover_primaryLight hover_grow open-popup" data-popup="settings" id="settings_button" title="Page Settings">settings</i>
+                <i class="material-icons pointer banner_button index_animation animate__animated animate__bounceInRight hover_primaryLight hover_grow animate__delay-var" id="account-button">account_circle</i>
+                <div id="account-dropdown" class="hidden index_animation animate__animated animate__slideInRight animate__faster">
+                    @ACCOUNT_DROPDOWN@
+                </div>
+            </div>
+        </div>
+        <nav class="mobile_animate__animated animate__slideInLeft animate__faster" id="nav-dropdown-container">
+            <div class="navbutton_container">
+                <i class="material-icons nav_expand">expand_more</i>
+                <h5><a data-link="nav" id="home_front-navbutton" class="main_nav_button navbutton" href="/home">Home</a></h5>
+                <div class="nav_dropdown">
+                    <h5><a data-link="nav" id="account_sign-in-navbutton" class="navdrop_button navbutton" href="/account/sign-in">Sign In</a></h5>
+                    <h5><a data-link="nav" id="account_sign-up-navbutton" class="navdrop_button navbutton" href="/account/sign-up">Sign Up</a></h5>
+                </div>
+            </div>
+            <div class="navbutton_container">
+                <i class="material-icons nav_expand">expand_more</i>
+                <h5><a data-link="nav" id="about_front-navbutton" class="main_nav_button navbutton" href="/about">About</a></h5>
+                <div class="nav_dropdown">
+                    <h5><a data-link="nav" id="about_portfolio-navbutton" class="navdrop_button navbutton" href="/about/portfolio">Portfolio</a></h5>
+                    <h5><a data-link="nav" id="about_projects-navbutton" class="navdrop_button navbutton" href="/about/projects">Projects</a></h5>
+                    <!-- <h5><a data-link="nav" id="about_contact-navbutton" class="navdrop_button navbutton" href="/about/contact">Contact</a></h5> -->
+                </div>
+            </div>
+            <div class="navbutton_container">
+                <i class="material-icons nav_expand"></i>
+                <h5><a data-link="nav" id="lessons_front-navbutton" class="main_nav_button navbutton" href="/lessons">Lessons</a></h5>
+                <!-- <div class="nav_dropdown">
+                    <h5><a data-link="nav" id="lessons_saxophone-navbutton" class="navdrop_button navbutton" href="/lessons/saxophone">Saxophone</a></h5>
+                    <h5><a data-link="nav" id="lessons_composition-navbutton" class="navdrop_button navbutton" href="/lessons/composition">Composition</a></h5>
+                </div> -->
+            </div>
+            <div class="navbutton_container">
+                <i class="material-icons nav_expand"></i>
+                <h5><a data-link="nav" id="my-compositions_front-navbutton" class="main_nav_button navbutton" href="/my-compositions">My Compositions</a></h5>
+                <!-- <div class="nav_dropdown"> -->
+                <!-- <h5><a data-link="nav" id="composition_commissions-navbutton" class="navdrop_button navbutton" href="/composition/commissions">Commissions</a></h5> -->
+                <!-- <h5><a data-link="nav" id="composition_my-compositions-navbutton" class="navdrop_button navbutton" href="/composition/my-compositions">My Compositions</a></h5> -->
+                <!-- <h5><a data-link="nav" id="composition_lessons-navbutton" class="navdrop_button navbutton" href="/lessons">Composition Lessons</a></h5> -->
+                <!-- </div> -->
+            </div>
+            <div class="navbutton_container">
+                <i class="material-icons nav_expand"></i>
+                <h5><a data-link="nav" id="recording-studio_front-navbutton" class="main_nav_button navbutton" href="/recording-studio">Recording Studio</a></h5>
+                <!-- <div class="nav_dropdown">
+                    <h5><a data-link="nav" id="recording-studio_recording-navbutton" class="navdrop_button navbutton" href="/recording-studio/recording">Recording</a></h5>
+                    <h5><a data-link="nav" id="recording-studio_mixing-navbutton" class="navdrop_button navbutton" href="/recording-studio/mixing">Live-Mixing</a></h5>
+                    <h5><a data-link="nav" id="recording-studio_mockups-navbutton" class="navdrop_button navbutton" href="/recording-studio/mockups">Recording Mockups</a></h5>
+                </div> -->
+            </div>
+            <div class="navbutton_container">
+                <i class="material-icons nav_expand"></i>
+                <h5><a data-link="nav" id="contact_front-navbutton" class="main_nav_button navbutton" href="/contact">Contact</a></h5>
+                <!-- <div class="nav_dropdown"> -->
+                <!-- <h5><a data-link="nav" id="other_score-editing-navbutton" class="navdrop_button navbutton" href="/other/score-editing">Score Editing</a></h5>
+                    <h5><a data-link="nav" id="other_take-note-navbutton" class="navdrop_button navbutton" href="/other/take-note">Take Note Podcast</a></h5> -->
+                <!-- </div> -->
+            </div>
+        </nav>
+        <i class="material-icons mobile_hidden pointer" title="Collapse Header" id="collapse_header">drag_handle</i>
+    </header>
+    <div id="popups">
+        <div class="popup hidden animate__animated" id="settings-popup">
+            <div class="popup-content animate__animated animate__backInRight animate__faster">
+                <button class="popup-close_button material-icons close-popup" data-popup="settings">clear</button>
+                <p id="dyslexia_button" class="hover_grow settings-button pointer">Settings for Dyslexia</p>
+                <h3 class="popup-title">Settings</h3>
+                <div class="setting-container">
+                    <h6 class="setting-label">Notifications</h6>
+                    <label class="switch">
+                        <input type="checkbox" id="setting-notifications">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-container">
+                    <h6 class="setting-label">Primary vs. Secondary</h6>
+                    <label class="switch">
+                        <input type="checkbox" id="setting-pallette">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-container">
+                    <h6 class="setting-label">Darkmode</h6>
+                    <label class="switch">
+                        <input type="checkbox" id="setting-darkmode">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-container">
+                    <h6 class="setting-label">Playback on Hover (compositions)</h6>
+                    <label class="switch">
+                        <input type="checkbox" id="setting-hover_audio">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-container">
+                    <h6 class="setting-label">Animations</h6>
+                    <label class="switch">
+                        <input type="checkbox" id="setting-animations">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-container">
+                    <h6 class="setting-label">Text Size</h6>
+                    <label>
+                        <input type="range" id="setting-font_size" min="0" max="10" value="0">
+                    </label>
+                </div>
+                <div class="setting-container">
+                    <h6 class="setting-label">Font</h6>
+                    <select id="setting-font" class="dropdown-selections">
+                        <option value="roboto" class="dropdown-single_selection">Sans-serif: Roboto (default)</option>
+                        <option value="open_sans" class="dropdown-single_selection">Sans-serif: Open Sans</option>
+                        <option value="times_new_roman" class="dropdown-single_selection">Serif: Times New Roman</option>
+                        <option value="merriweather">Serif: Merriweather</option>
+                    </select>
+                </div>
+                <div class="setting-container">
+                    <h6 class="setting-label">Line Spacing</h6>
+                    <label>
+                        <input type="range" id="setting-line_spacing" min="0" max="20" value="12">
+                    </label>
+                </div>
+                <div class="setting-container">
+                    <h6 class="setting-label">Single Color Backgrounds</h6>
+                    <label class="switch">
+                        <input type="checkbox" id="setting-background_color">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="cookie-save hidden" id="settings-cookie">
+                    <h6 class="cookie-label pointer hover_grow" id="cookie-bake"><i class="material-icons">cookie</i> Bake Your Cookie!</h6>
+                    <div id="cookie-choice" class="hidden">
+                        <p id="cookie-disclaimer"><span class="note">Please Read: </span>Cookies can be used for evil and for the good, some websites' cookies are poisonous and some are quite nutritious. The cookie you are about to bake only takes the ingredients you have mixed
+                            above and stores it on your computer so when you reload the website, you don't have to perfect your recipe again. You can read more
+                            <a target="_blank" href="https://www.privacypolicies.com/blog/cookie-consent-examples/#:~:text=Cookies%20are%20tiny%20text%20files,store%20details%20about%20their%20preferences.&text=For%20example%2C%20cookies%20can%3A,Save%20user%20login%20details"><span class="link">here</span></a>! Are you sure you want to proceed?</p>
+                        <div class="yes_no">
+                            <button class="yes_button pointer hover_grow" id="bake_cookie-yes">Yes</button>
+                            <button class="no_button pointer hover_grow" id="bake_cookie-no">No</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <h6 class="cookie-label pointer hover_grow" id="eat_cookie">Delete all Cookies</h6>s -->
+                <h3 class="popup-title">What Does Your Cookie Look Like? View here:</h3>
+                <br>
+                <code id="cookie-code"></code>
+            </div>
+        </div>
+        <div class="popup hidden animate__animated" id="new_features-popup">
+            <div class="popup-content animate__animated animate__backInRight animate__faster">
+                <button class="popup-close_button material-icons close-popup" data-popup="new_features">clear</button>
+                <h3 class="popup-title">New Features!</h3>
+                <div class="new_feature">
+                    <i class="material-icons">account_circle</i>
+                    <h4 class="feature_title">Client Accounts! <a href="/account/sign-up" data-link="nav" class="link">Sign up</a>!</h4>
+                </div>
+                <div class="new_feature">
+                    <i class="material-icons animate__animated animate__shakeX animate__infinite">animation</i>
+                    <h4 class="feature_title">Animations!</h4>
+                </div>
+                <div class="new_feature">
+                    <i class="fa fa-external-link" id="new_features_popup-popup_icon"></i>
+                    <h4 class="feature_title">Better looking popups!</h4>
+                </div>
+                <div class="new_feature">
+                    <i class="material-icons">face</i>
+                    <h4 class="feature_title">Better <a href="/about" data-link="nav" class="link">About Me</a> Page</h4>
+                </div>
+                <div class="new_feature">
+                    <i class="material-icons">contact_page</i>
+                    <h4 class="feature_title">Added <a href="/about/portfolio" data-link="nav" class="link">Portfolio</a></h4>
+                </div>
+                <div class="new_feature">
+                    <i class="material-icons">edit_note</i>
+                    <h4 class="feature_title">Added <a href="/about/projects:desk" data-link="nav" class="link">Projects</a> page</h4>
+                </div>
+                <div class="new_feature">
+                    <i class="material-icons">settings</i>
+                    <h4 class="feature_title">More Settings</h4>
+                </div>
+                <div class="new_feature">
+                    <i class="material-icons">cookie</i>
+                    <h4 class="feature_title">Bake yourself a cookie!</h4>
+                </div>
+                <div class="new_feature">
+                    <i class="material-icons">notifications</i>
+                    <h4 class="feature_title">Page Notifications</h4>
+                </div>
+                <h3 class="popup-title">Coming soon!</h3>
+                <div class="new_feature">
+                    <i class="material-icons">school</i>
+                    <h4 class="feature_title">Pages for Students</h4>
+                </div>
+                <div class="new_feature">
+                    <i class="material-icons">mic</i>
+                    <h4 class="feature_title">Recordings (for portfolio)</h4>
+                </div>
+                <div class="new_feature">
+                    <i class="material-icons">play_circle_outline</i>
+                    <h4 class="feature_title">Global Playlist</h4>
+                </div>
+                <div class="new_feature">
+                    <i class="material-icons">event</i>
+                    <h4 class="feature_title">Better Looking Calendar</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="page">
+    </div>
+    <footer>
+        <i class="material-icons hover_grow scroll_top button hidden pointer" id="scroll_top" title="Scroll To Top">arrow_upward</i>
+        <p>
+            &copy; King Music Studio 2021. All rights reserved.<br> Contact me at <strong><a
+                        href="mailto: taylor.reese.king@gmail.com"
+                        class="link">taylor.reese.king@gmail.com</a></strong> or call me at <strong title="call/text">(208) 392-8139</strong>
+            <span class="note">*</span><br>
+            <i><small><span class="note">*Note:</span> Feel free to leave a voicemail or a text message me. Be sure to leave your name. Thank you!</small></i>
+        </p>
+        <form action="https://www.paypal.com/donate" method="post" target="_blank" class="center" id="paypal-donate">
+            <input type="hidden" name="hosted_button_id" value="YV4A4BYYJRND4" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+        <div class="animate__delay-block">
+            <a href="https://facebook.com/taylorkingmusicstudio" class="fab fa-facebook index_link circle index_animation animate__animated animate__bounceInLeft animate__delay-var" target="_blank"></a>
+            <a href="https://www.instagram.com/t.sax.king/" class="fab fa-instagram index_link circle index_animation animate__animated animate__bounceInLeft animate__delay-var" target="_blank"></a>
+        </div>
+    </footer>
+</body>
+
+</html>

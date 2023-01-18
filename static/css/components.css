@@ -1,0 +1,1085 @@
+/* Components */
+
+
+/* Pages */
+
+body,
+.subpage {
+    display: block;
+    visibility: visible;
+    width: 100%;
+}
+
+#page {
+    width: 100%;
+    height: min-content;
+}
+
+body {
+    margin: 0px;
+    height: min-content;
+    z-index: 1;
+}
+
+.page-title {
+    padding: 10px 0px;
+}
+
+.subpage_description {
+    width: 50%;
+    text-align: center;
+    margin: 15px auto;
+    z-index: 2;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    background-color: var(--secondLayer);
+}
+
+footer p {
+    padding: 10px 0px;
+}
+
+
+/* Buttons and Links */
+
+a,
+button {
+    cursor: pointer;
+}
+
+.yes_button,
+.no_button {
+    padding: 5px 15px;
+    font-size: calc(large + var(--fontAdd));
+    color: var(--lightText);
+}
+
+.no_button {
+    background-color: rgb(172, 0, 0);
+}
+
+.no_button:hover {
+    background-color: red;
+}
+
+.yes_button {
+    background-color: rgb(3, 92, 3);
+}
+
+.yes_button:hover {
+    background-color: green;
+}
+
+button,
+.button {
+    background-color: var(--light-mediumFaded);
+    text-decoration: none;
+    border: none;
+    padding: 5px;
+    color: var(--darkText);
+    /* transition: background-color .2s ease-in-out; */
+}
+
+button:hover,
+.button:hover {
+    background-color: var(--main);
+}
+
+.button.selected,
+button.selected {
+    background-color: var(--dark);
+}
+
+
+/* Button Aesthetics */
+
+button h1,
+button h2,
+button h3,
+button h4,
+button h5,
+button h6,
+button p {
+    color: var(--lightText) !important;
+}
+
+button.selected {
+    background-color: var(--dark);
+}
+
+button.semi-selected {
+    background-color: var(--main);
+}
+
+
+/* Line Breaks */
+
+hr {
+    height: 2px;
+    border: none;
+    width: 100%;
+    background-color: var(--thirdLayer);
+}
+
+
+/* Column Display */
+
+.column_display {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+    height: min-content;
+}
+
+.column_display .cd_column {
+    flex: 0 1 min-content;
+}
+
+
+/* Form */
+
+form {
+    width: 300px;
+}
+
+.desktop form {
+    --width: 20vw;
+}
+
+.mobile form {
+    --width: 80vw;
+}
+
+.popup form {
+    --width: 300px;
+}
+
+.popup form {
+    --width: 300px;
+}
+
+form * {
+    margin: auto;
+}
+
+form .form_title {
+    margin: 15px auto;
+    text-align: center;
+}
+
+form input,
+form textarea {
+    border-radius: 16px;
+    box-shadow: var(--boxShadow);
+    padding: 10px;
+    text-overflow: clip;
+    display: block;
+    border: none;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="tel"] {
+    height: 16px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="tel"],
+form textarea {
+    color: var(--darkText) !important;
+}
+
+.desktop form input[type="text"],
+.desktop form input[type="password"],
+.desktop form input[type="email"],
+.desktop form input[type="tel"],
+.desktop form textarea {
+    width: var(--width);
+}
+
+.mobile form input[type="text"],
+.mobile form input[type="password"],
+.mobile form input[type="email"],
+.mobile form input[type="tel"],
+.mobile form textarea {
+    width: var(--width);
+}
+
+form textarea {
+    min-height: 100px;
+    width: 300px;
+}
+
+form input[type="file"] {
+    color: var(--secondary);
+}
+
+form li {
+    list-style: none;
+}
+
+form input[type="submit"] {
+    width: 310px;
+    height: 32px;
+    margin: 15px auto;
+    border-radius: 16px;
+    background-color: var(--main);
+    transition: background-color 0.25s ease;
+    transition: border 0.25 ease;
+    color: var(--lightText);
+}
+
+form input[type="submit"]:hover {
+    background-color: var(--light);
+}
+
+form label p,
+form label {
+    text-align: center;
+}
+
+form li input[type="checkbox"],
+form li input[type="radio"],
+form li label p,
+form li label {
+    display: inline-block;
+}
+
+form label h1,
+form label h2,
+form label h3,
+form label h4,
+form label h5,
+form label h6,
+form label p {
+    padding: 10px;
+    max-width: 85%;
+    overflow-wrap: break-word;
+}
+
+form .g-recaptcha {
+    margin: 15px auto;
+}
+
+select {
+    margin: 15px 0px;
+}
+
+select,
+option {
+    width: min-content;
+    height: 24px;
+    background-color: var(--firstLayer);
+    color: var(--text);
+}
+
+.desktop select,
+.desktop option {
+    font-size: calc(18px + var(--fontAdd));
+}
+
+.mobile select,
+.mobile option {
+    font-size: calc(14px + var(--fontAdd));
+}
+
+.label-check_radio {
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    align-items: center;
+}
+
+.label-check_radio * {
+    width: min-content;
+    white-space: nowrap;
+    margin: 15px 0px !important;
+}
+
+
+/* Vertical Assortment */
+
+.assortment.vertical {
+    display: inline-block;
+    width: min-content;
+}
+
+.assortment.vertical .vertical_assortment_container .assortment_title {
+    margin: 15px auto 15px auto;
+    min-width: min-content;
+    max-width: max-content;
+}
+
+.assortment.vertical .vertical_assortment_container .card_container {
+    width: min-content;
+    overflow-y: scroll;
+    overflow-x: wrap;
+    height: 800px;
+}
+
+.assortment.vertical .vertical_assortment_container .card_container .card {
+    vertical-align: top;
+    margin: 0px 10px;
+    display: inline-block;
+    width: min-content;
+    background: transparent;
+    border: none;
+}
+
+.assortment.vertical .vertical_assortment_container .card_container .card .card_img {
+    width: 255px;
+    height: 330px;
+    box-shadow: 3px -3px 10px var(--black);
+}
+
+
+/* Centering Box Set */
+
+.centering_box_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.centering_box_container .centering_box {
+    /* margin: 15px; */
+    width: min-content;
+}
+
+.centering_box.nav-link {
+    position: relative;
+    width: 300px;
+}
+
+.centering_box .card {
+    margin: auto;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-color: var(--black);
+    background-size: cover;
+    box-shadow: var(--boxShadow);
+    cursor: pointer;
+    margin: 15px auto;
+}
+
+.centering_box .card_label {
+    display: block;
+    height: min-content;
+    width: 100%;
+    padding: 0px 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.mobile .card_label {
+    font-size: calc(medium + var(--fontAdd));
+}
+
+.desktop .card {
+    height: 150px;
+    width: 150px;
+}
+
+.mobile .card {
+    height: 100px;
+    width: 100px;
+}
+
+.centering_box .card-link {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Table */
+
+table .table_title {
+    margin: 15px;
+}
+
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+table.full-width {
+    width: 100%;
+}
+
+table.half-width {
+    width: 50%;
+}
+
+table.quarter-width {
+    width: 25%;
+}
+
+.desktop table.small {
+    width: 300px;
+}
+
+.mobile table.small {
+    width: 80vw;
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: var(--main);
+    color: var(--lightText);
+}
+
+table tr {
+    height: min-content;
+}
+
+table td,
+table th {
+    padding: 0px 15px;
+    border: 1px solid var(--secondLayer);
+    padding: 8px;
+    word-wrap: break-word;
+}
+
+tr:nth-child(even) {
+    background-color: var(--thirdLayer);
+}
+
+tr:hover {
+    background-color: var(--light-faded);
+}
+
+
+/* Single Dropdown */
+
+.single_dropdown {
+    display: block;
+    background: transparent;
+    min-width: min-content;
+    max-width: max-content;
+}
+
+.dropdown_cover {
+    width: 100%;
+}
+
+.single_dropdown>.dropdown_container {
+    background: transparent;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, display 0.5s ease-in-out;
+}
+
+.single_dropdown:hover .dropdown_container {
+    visibility: visible;
+    height: auto;
+    display: block;
+    position: absolute;
+    opacity: 1;
+    z-index: 10;
+}
+
+
+/* info_dropdowns */
+
+.info_dropdown-container {
+    display: block;
+    margin: 20px auto;
+}
+
+.desktop .info_dropdown-container {
+    width: 50%;
+}
+
+.mobile .info_dropdown-container {
+    width: 75%;
+}
+
+.info_dropdown {
+    width: 100%;
+}
+
+.info_dropdown-title {
+    height: 50px;
+    display: flex;
+    width: 100%;
+    border: 2px solid;
+    border-top: 0px;
+    flex-wrap: nowrap;
+    border-radius: 0px 0px 5px 5px;
+    padding: 10px 0px;
+    z-index: 2;
+    border-color: var(--thirdLayer);
+    transition: background-color .2s ease-in-out;
+}
+
+.info_dropdown-title:hover {
+    background-color: var(--secondLayer);
+}
+
+.info_dropdown-title.selected {
+    background-color: var(--main);
+}
+
+.info_dropdown-title.selected * {
+    color: var(--lightText);
+}
+
+.info_dropdown-title .info_dropdown-arrow {
+    font-size: calc(36px + var(--fontAdd));
+    width: 36px;
+    line-height: 50px;
+    height: 50px;
+    transition: transform .2s ease-in-out;
+}
+
+.info_dropdown-title h3 {
+    width: calc( 100% - 36px);
+    padding: 0px 15px;
+}
+
+.info_dropdown-content {
+    z-index: 1;
+    background-color: var(--secondLayer);
+    padding: 15px;
+}
+
+.info_dropdown-content p {
+    padding: 0px 15px;
+}
+
+
+/* Slideshows */
+
+.slideshow {
+    width: 100%;
+}
+
+.slideshow * {
+    box-sizing: border-box;
+}
+
+
+/* Slideshow container */
+
+.slideshow .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+
+/* Hide the images by default */
+
+.slideshow .slide {
+    display: inline-block;
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.slideshow .slideshow-container {
+    background-color: var(--secondLayer);
+}
+
+
+/* Next & previous buttons */
+
+.slideshow .slide-prev,
+.slideshow .slide-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    font-weight: bold;
+    font-size: calc(18px + var(--fontAdd));
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    color: var(--text);
+}
+
+
+/* Position the "next button" to the right */
+
+.slideshow .slide-next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.desktop .slideshow .slide-prev:hover,
+.desktop .slideshow .slide-next:hover,
+.mobile .slideshow .slide-prev,
+.mobile .slideshow .slide-next {
+    background-color: var(--black-mediumFaded);
+    color: var(--lightText);
+}
+
+
+/* Caption text */
+
+.slideshow .text {
+    color: var(--lightText);
+    background-color: var(--black-mediumFaded);
+    font-size: calc(16px + --fontAdd);
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    width: 40%;
+    margin: auto;
+    text-align: center;
+}
+
+
+/* Number text (1/3 etc) */
+
+.slideshow .numbertext {
+    background-color: var(--black-mediumFaded);
+    font-size: calc(12px + var(--fontAdd));
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.slideshow * {
+    color: var(--lightText);
+}
+
+
+/* The dots/bullets/indicators */
+
+.slideshow .slide-dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    background-color: var(--secondLayer);
+}
+
+.slideshow .active {
+    background-color: var(--main) !important;
+}
+
+.slideshow .slide-dot:hover {
+    background-color: var(--veryLight);
+}
+
+
+/* Fading animation */
+
+
+/* Popup */
+
+.popup {
+    background-color: var(--black-mediumFaded);
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+.popup .popup-close_button {
+    background: none;
+    border: none;
+    display: block;
+    position: sticky;
+    float: right;
+    right: 25px;
+    top: 25px;
+    color: var(--lightText);
+}
+
+.popup .popup-content {
+    display: block;
+    margin: auto;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: var(--secondLayer);
+    min-height: 25vh;
+    height: min-content;
+}
+
+.popup .popup-title {
+    margin: 50px 20px 0px 20px;
+    display: block;
+    text-align: center;
+    width: calc(100% - 40px);
+    top: 50vw;
+}
+
+.desktop .popup-text {
+    width: 75%;
+    margin: auto;
+}
+
+.mobile .popup-text {
+    margin: 50px 20px 0px 20px;
+    width: calc(100% - 40px);
+}
+
+.popup .popup-content {
+    height: 80vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+.popup.skinny .popup-content {
+    width: 50vw !important;
+}
+
+.popup.short .popup-content {
+    height: 20vh !important;
+    margin-top: 40vh !important;
+    margin-bottom: 40vh !important;
+}
+
+.desktop .popup .popup-content {
+    width: 50vw;
+}
+
+.mobile .popup .popup-content {
+    width: 75vw;
+}
+
+.popup .popup-content * {
+    color: var(--text);
+}
+
+
+/* Notifications */
+
+#notifications {
+    display: block;
+    position: fixed;
+    height: min-content;
+    left: 25vw;
+    top: 20px;
+    width: 50vw;
+    z-index: 99999999;
+}
+
+.notification {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 5px;
+    width: 100%;
+    background-color: var(--firstLayer);
+    border: 2px solid var(--thirdLayer);
+    border-radius: 5px;
+}
+
+.notification-message {
+    color: var(--text);
+    line-height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+
+/* Videos */
+
+.desktop .video_playback {
+    width: 500px;
+    height: 280px;
+}
+
+.mobile .video_playback {
+    width: 90vw;
+    height: auto;
+}
+
+
+/* Text Banner */
+
+.banner .column_display {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: min-content;
+    padding: 50px 0px;
+}
+
+.banner .column_display .cd_column {
+    flex: 0 1 50em !important;
+}
+
+.banner p {
+    color: var(--lightText);
+    font-size: calc(large + var(--fontAdd));
+    padding: 0px;
+}
+
+.banner .cd_column .cd_content {
+    padding: 15px;
+}
+
+
+/* Scroll to top */
+
+#scroll_top {
+    display: block;
+    font-size: xx-large !important;
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    opacity: 1;
+    bottom: 20px;
+    box-shadow: var(--boxShadow);
+    border-radius: 50%;
+    right: 20px;
+    z-index: 13;
+}
+
+
+/* Scrollbar */
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: var(--dark);
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--main);
+}
+
+
+/* 2 Position Switch */
+
+
+/* The switch - the box around the slider */
+
+.setting-container {
+    width: 75%;
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    grid-template-rows: 1fr;
+    margin: auto;
+    height: 50px;
+}
+
+.settings-button {
+    background-color: var(--main);
+    width: min-content;
+    padding: 5px;
+    margin: 20px;
+    font-size: calc(20px + var(--fontAdd));
+}
+
+.settings-button:hover {
+    background-color: var(--dark);
+}
+
+.desktop .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+
+/* Hide default HTML checkbox */
+
+.desktop .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+/* The slider */
+
+.desktop .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.desktop .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.desktop input:checked+.slider {
+    background-color: var(--main);
+}
+
+.desktop input:focus+.slider {
+    box-shadow: 0 0 1px var(--dark);
+}
+
+.desktop input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+/* Rounded sliders */
+
+.desktop .slider.round {
+    border-radius: 34px;
+}
+
+.desktop .slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* Mobile Sliders */
+
+.mobile .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+}
+
+
+/* Hide default HTML checkbox */
+
+.mobile .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.mobile .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.mobile input:checked+.slider {
+    background-color: var(--main);
+}
+
+.mobile input:focus+.slider {
+    box-shadow: 0 0 1px var(--dark);
+}
+
+.mobile input:checked+.slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+}
+
+
+/* Rounded sliders */
+
+.mobile .slider.round {
+    border-radius: 16px;
+}
+
+.mobile .slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* Password Strength */
+
+#password_strength {
+    display: block;
+    width: min-content;
+    height: 20px;
+    padding: 5px;
+    white-space: nowrap;
+    border-radius: 0px 0px 20% 20%;
+}
+
+#password_strength.strong {
+    background-color: rgb(7, 143, 7);
+}
+
+#password_strength.medium {
+    background-color: rgb(167, 158, 33);
+}
+
+#password_strength.weak {
+    background-color: rgb(157, 28, 11);
+}

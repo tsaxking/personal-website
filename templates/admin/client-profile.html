@@ -1,0 +1,105 @@
+<div class="subpage">
+    <div class="popup skinny hidden animate__animated" id="new_log-popup">
+        <div class="popup-content animate__animated animate__backInRight animate__faster">
+            <button class="popup-close_button material-icons close-popup" data-popup="new_log">clear</button>
+            <h3 class="popup-title">New Log:</h3>
+            <hr>
+            <form action="/admin/new-log/@USERNAME@" method="post" class="center my-form">
+                <label for="date"><h4>Lesson Date</h4><input type="text" name="date"></label>
+                <label for="content"><h4>Lesson Content</h4><textarea type="text" name="content"></textarea></label>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+    <div class="popup skinny hidden animate__animated" id="change_log-popup">
+        <div class="popup-content animate__animated animate__backInRight animate__faster">
+            <button class="popup-close_button material-icons close-popup" data-popup="change_log">clear</button>
+            <h3 class="popup-title">Change Log:</h3>
+            <hr>
+            <form action="/admin/change-log/@USERNAME@" method="post" class="center my-form" id="change-log">
+                <label for="id"><h4>Lesson ID</h4><input type="text" name="id"></label>
+                <label for="date"><h4>Lesson Date</h4><input type="text" name="date"></label>
+                <label for="content"><h4>Lesson Content</h4><textarea type="text" name="content"></textarea></label>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+    <div class="popup skinny hidden animate__animated" id="change_permissions-popup">
+        <div class="popup-content animate__animated animate__backInRight animate__faster">
+            <button class="popup-close_button material-icons close-popup" data-popup="change_permissions">clear</button>
+            <h3 class="popup-title">Add Permissions:</h3>
+            <hr>
+            <form action="/admin/change-permissions/@USERNAME@" method="post" class="center my-form" id="change-permissions">
+                <label for="id" class="label-check_radio"><h4>Parent</h4><input type="checkbox" name="role1" value="parent"></label>
+                <label for="id" class="label-check_radio"><h4>Student</h4><input type="checkbox" name="role2" value="student"></label>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+    <h1 class="center page-title">@FULL_NAME@'s Profile</h1>
+    <div class="account-info">
+        <h3 class="center">Username: @USERNAME@</h3>
+        <div client="account-roles">
+            <table class="skinny">
+                <tbody id="roles-table">
+                    <tr>
+                        <th>
+                            <h5>Permissions</h5>
+                        </th>
+                    </tr>
+                    <repeat id="roles">
+                        <tr class="pointer open-popup">
+                            <td>
+                                <p class="center">@ROLE@</p>
+                            </td>
+                        </tr>
+                    </repeat>
+                    <tr>
+                        <td>
+                            <p class="pointer open-popup center" data-popup="change_permissions" data-form='{"data":{"checkboxes":{"role1":"@PARENT@","role2":"@STUDENT@"}},"formID":"change-permissions"}'>Add/Remove Permissions</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <h4 class="center">Lesson Logs</h4>
+    <table class="full-width">
+        <tbody id="lesson-table">
+            <tr>
+                <th>
+                    <h5>ID</h5>
+                </th>
+                <th>
+                    <h5>Date</h5>
+                </th>
+                <th>
+                    <h5>Content</h5>
+                </th>
+            </tr>
+            <repeat id="lesson_logs">
+                <tr class="@POINTER@ @OPEN-POPUP@" data-popup="change_log" data-form='{"data":{"id":"@LESSON_LOG_ID-ENC@","date":"@LESSON_LOG_DATE-ENC@","content":"@LESSON_LOG_CONTENT-ENC@"},"formID":"change-log"}'>
+                    <td>
+                        <p class="log-id">@LESSON_LOG_ID@</p>
+                    </td>
+                    <td>
+                        <p class="log-date">@LESSON_LOG_DATE@</p>
+                    </td>
+                    <td>
+                        <p class="log-content">@LESSON_LOG_CONTENT@</p>
+                    </td>
+                </tr>
+            </repeat>
+        </tbody>
+    </table>
+    <h6><u class="pointer open-popup link center" data-popup="new_log">Create New Log</u></h6>
+    <div id="account-table">
+        <repeat id="account_logs">
+            <div class="log">
+                <h3 class="log-id">@REPEAT-NUM@</h3>
+                <h3 class="log-date">@ACCOUNT_LOG_DATE@</h3>
+                <p class="log-content">@ACCOUNT_LOG_CONTENT@</p>
+            </div>
+        </repeat>
+    </div>
+</div>
