@@ -46,20 +46,20 @@ const routes = [
 
 const app = express();
 
-app.use('/*', (req, res, next) => {
-    console.log(req.method, req.originalUrl);
+// app.use('/*', (req, res, next) => {
+//     console.log(req.method, req.originalUrl);
 
-    let ip = requestIp.getClientIp(req);
+//     let ip = requestIp.getClientIp(req);
 
-    ips.all('SELECT * FROM ips WHERE ip = ?', [ip], (err, rows) => {
-        if (rows[0] == undefined) {
-            next()
-        } else {
-            console.log('BLOCKED CLIENT: ' + ip);
-            res.status(403).json({ status: "blocked", msg: "403 (FORBIDDEN): You have sent too many requests to the server, your IP address has been blocked" });
-        };
-    });
-});
+//     ips.all('SELECT * FROM ips WHERE ip = ?', [ip], (err, rows) => {
+//         if (rows[0] == undefined) {
+//             next()
+//         } else {
+//             console.log('BLOCKED CLIENT: ' + ip);
+//             res.status(403).json({ status: "blocked", msg: "403 (FORBIDDEN): You have sent too many requests to the server, your IP address has been blocked" });
+//         };
+//     });
+// });
 
 
 app.use(cookieParser());
@@ -88,17 +88,17 @@ function serverTimeout(req, res, next) {
 
 app.use(serverTimeout);
 
-app.use('/*', (req, res, next) => {
-    let ip = requestIp.getClientIp(req);
-    ipAddresses[ip]++;
-    // console.log(ipAddresses);
+// app.use('/*', (req, res, next) => {
+//     let ip = requestIp.getClientIp(req);
+//     ipAddresses[ip]++;
+//     // console.log(ipAddresses);
 
-    if (ipAddresses[ip] > 1000) {
-        ips.run('INSERT INTO ips VALUES (?)', [ip]);
-    }
+//     if (ipAddresses[ip] > 1000) {
+//         ips.run('INSERT INTO ips VALUES (?)', [ip]);
+//     }
 
-    next();
-});
+//     next();
+// });
 
 let sess = [];
 
