@@ -1,10 +1,5 @@
-db/accounts.db
-db/ips.db
-db/transactions.db
-db/tuning.db
-db/website_logs.db
 archive/
-shit I need to do.txt
 .env
 node_modules/
 *.db
+static/js/build.js
