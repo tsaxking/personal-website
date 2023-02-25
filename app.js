@@ -47,6 +47,8 @@ const routes = [
 const app = express();
 
 app.use('/*', (req, res, next) => {
+    console.log(req.method, req.originalUrl);
+
     let ip = requestIp.getClientIp(req);
 
     ips.all('SELECT * FROM ips WHERE ip = ?', [ip], (err, rows) => {
