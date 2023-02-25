@@ -1,0 +1,49 @@
+<div class="subpage">
+    <h1 class="center page-title">Clients</h1>
+    <table class="full-width">
+        <tbody>
+            <tr>
+                <th>
+                    <h5>Username</h5>
+                </th>
+                <th>
+                    <h5>Name</h5>
+                </th>
+                <th>
+                    <h5>Phone Number</h5>
+                </th>
+                <th>
+                    <h5>Email</h5>
+                </th>
+                <th>
+                    <h5>Account Type</h5>
+                </th>
+                <th>
+                    <h5>Permissions</h5>
+                </th>
+            </tr>
+            <repeat id="client">
+                <tr class="client-row pointer" data-username="@USERNAME@">
+                    <td>
+                        <p>@USERNAME@</p>
+                    </td>
+                    <td>
+                        <p>@FULL_NAME@</p>
+                    </td>
+                    <td>
+                        <p>@PHONE_NUMBER@</p>
+                    </td>
+                    <td>
+                        <p>@EMAIL@</p>
+                    </td>
+                    <td>
+                        <p>@ACCOUNT_TYPE@</p>
+                    </td>
+                    <td>
+                        <p>@PERMISSIONS@</p>
+                    </td>
+                </tr>
+            </repeat>
+        </tbody>
+    </table>
+</div>

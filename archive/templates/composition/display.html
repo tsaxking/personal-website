@@ -1,0 +1,52 @@
+<div class="subpage">
+    <div class="popup @DISCLAIMER_STATUS@ animate__animated animate__fadeIn open-popup" id="copyright_disclaimer-popup" data-popup="copyright_disclaimer">
+        <div class="popup-content animate__animated animate__backInRight">
+            <i class="material-icons popup-close_button pointer close-popup" data-popup="copyright_disclaimer">clear</i>
+            <h1 class="popup-title note">
+                <i class="material-icons note" id="icon_warning">warning</i> ATTENTION:
+                <i class="material-icons note" id="icon_warning">warning</i>
+            </h1>
+            <h5 class="popup-text">
+                This music is not public domain. This was written as an educational exercise and to showcase what I/we can do. This project is only available for display. Click anywhere to continue.
+            </h5>
+        </div>
+    </div>
+    <div class="popup @MOBILE_HIDDEN@ animate__animated animate__fadeIn close-popup" id="mobile_display-popup" data-popup="mobile_display">
+        <div class="popup-content animate__animated animate__backInRight">
+            <i class="material-icons pointer popup-close_button close-popup" data-popup="mobile_display">clear</i>
+            <!-- <h1 class="popup-title note">
+                <i class="material-icons note" id="icon_warning">warning</i> Whoops! My website doesn't yet support PDF displays on all devices :(
+                <i class="material-icons note" id="icon_warning">warning</i>
+            </h1>
+            <h5 class="popup-text">
+                Currently, the pdfs do not work on your device. If you want to see the music I've worked on, I recommend going onto a computer! (I honestly don't know what the issue is, if you have a solution, please reach out to me
+                <a href="mailto: taylor.reese.king@gmail.com"></a>!)
+            </h5> -->
+            <h1 class="popup-title"><span class="note">Please Read:</span> You're on a mobile browser so the pdf may not display properly</h1>
+            <h5 class="popup-text">
+                Sometimes PDFs don't display properly on mobile browsers, if you're having any issue regarding them, please <a href="/about/contact-me" data-link="nav" class="link">contact me</a>!
+            </h5>
+        </div>
+    </div>
+    <h1 class="center page-title" id="composition_title">@TITLE@</h1>
+    <i><h3 class="center" id="composition_subtitle">@SUBTITLE@@COMPOSER_IF_ARRANGED@</h3></i>
+    <h5 class="only_desktop_hidden subpage_description"><span class="note">Please Read: </span>Sometimes PDFs don't display properly on mobile browsers, if you're having any issue regarding them, please <a href="/about/contact-me" data-link="nav" class="link">contact me</a>!</h5>
+    <audio controls class="audio_playback" id="composition_audio" src="@AUDIO@_audio.mp3">
+        <p>Unfortunately, your browser isn't invited for super fun audio time :(</p>
+        <p>If you see this, please let us know <u><a href="/contact" data-link="nav">here</a></u></p>
+    </audio>
+    <div class="centering_box_container" id="composition_info">
+        <div class="centering_box">
+            <p id="composition_description">@DESCRIPTION@</p>
+        </div>
+        <div class="centering_box">
+            <div class="pdf_full_small-container" id="composition-pdf_full_small_container">
+                <div id="composition_pdf_container">
+                    <iframe class="" src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://taylorreeseking.com@PDF@_pdf.pdf#toolbar=0&scrollbar=0" frameborder="0" scrolling="auto" height="100%" width="100%" id="composition_pdf"></iframe>
+                    <i class="material-icons pointer open-fullscreen_pdf" id="composition_open_fullscreen_pdf">open_in_full</i>
+                </div>
+            </div>
+        </div>
+        @YOUTUBE@
+    </div>
+</div>
