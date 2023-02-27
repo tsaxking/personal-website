@@ -1,0 +1,390 @@
+{
+    "Private Instructors": [{
+        "link": {
+            "url": "https://www.passionatomusic.com/instructor",
+            "text": "Dr. Yuxin Ouyang"
+        },
+        "description": "Composition (Spring 2022)"
+    }, {
+        "link": {
+            "url": "http://derekganong.com",
+            "text": "Dr. Derek Ganong"
+        },
+        "description": "Sound engineering (2020 - present)"
+    }, {
+        "link": {
+            "url": "https://alexandrasjobeck.wixsite.com/jazz",
+            "text": "Dr. Alexandra Sjobeck"
+        },
+        "description": "Jazz piano (2019 - 2022)"
+    }, {
+        "link": {
+            "url": "https://ericscottalexander.com",
+            "text": "Dr. Eric Alexander"
+        },
+        "description": "Composition (2018 - 2021)"
+    }, {
+        "text": "Prof. Rodney Zuroeveste, saxophone (2015 - 2021)"
+    }, {
+        "text": "Prof. Marcellus Brown, conducting (2018 - 2022)"
+    }, {
+        "text": "Prof. Jim Ogle, conducting (2018 - 2019)"
+    }, {
+        "text": "Sandon Mayhew, saxophone (2013 - 2015)"
+    }, {
+        "text": "Leonardo Escobar, composition (2015 - 2018)"
+    }, {
+        "text": "Reese Robles, conducting (2017 - 2018)"
+    }],
+    "Work Experience": [{
+        "text": "Meridian High School Sound Engineer (2022 - present)"
+    }, {
+        "link": {
+            "url": "https://www.armadacorps.org",
+            "text": "Armada Winds"
+        },
+        "description": "Music/Woodwind Caption Head and Sound Engineer (2021 - present)"
+    }, {
+        "text": "Saxophone Instructor (2016 - present)"
+    }, {
+        "text": "Composition Instructor (2017 - present)"
+    }, {
+        "text": "Freelance Sound Engineer (2020 - present)"
+    }, {
+        "text": "Morrison Center Assistant Audio Technician (2022)"
+    }, {
+        "text": "Boise State University Band Librarian (2019 - 2022)"
+    }, {
+        "text": "iCode Instructor (2021)"
+    }],
+    "Ensemble Experience": [{
+        "text": "Boise State University Symphonic Winds saxophone (2018 - present)",
+        "list": [{
+            "text": "Principal saxophone (2019 - 2022)"
+        }]
+    }, {
+        "text": "Treasure Valley Concert Band, soprano saxophone (2022)"
+    }, {
+        "text": "Pit Orchestra",
+        "list": [{
+            "text": "Thououghly Modern Millie - Boise Music Week (2019)",
+            "list": [{
+                "text": "Alto Saxophone"
+            }, {
+                "text": "Tenor Saxophone"
+            }, {
+                "text": "Soprano Saxophone"
+            }]
+        }, {
+            "text": "Spongebob, the Musical - Music Theater of Idaho (2022)",
+            "list": [{
+                "text": "Tenor Saxophone"
+            }, {
+                "text": "Soprano Saxophone"
+            }, {
+                "text": "Clarinet"
+            }, {
+                "text": "Bass Clarinet"
+            }]
+        }, {
+            "text": "Matilda - Music Theater of Idaho (2022)",
+            "list": [{
+                "text": "Soprano Saxophone"
+            }, {
+                "text": "Alto Saxophone"
+            }, {
+                "text": "Tenor Saxophone"
+            }, {
+                "text": "Clarinet"
+            }, {
+                "text": "Bass Clarinet"
+            }]
+        }]
+    }, {
+        "text": "Boise State University Jazz Orchestra, lead alto (2018 - 2022)"
+    }, {
+        "link": {
+            "url": "https://www.boisestate.edu/thunder/",
+            "text": "Boise State University Keith and Catherine Stein Blue Thunder Marching Band"
+        },
+        "description": "Alto Saxophone (2018 - 2021)"
+    }, {
+        "text": "Brady Street Jazz Combo, alto/soprano saxophone (2021 - 2022)"
+    }, {
+        "link": {
+            "url": "https://www.armadacorps.org",
+            "text": "Armada Winds"
+        },
+        "description": "(2018 - 2019)"
+    }, {
+        "text": "Boise State University Symphonic Orchestra, alto saxophone (2019)"
+    }, {
+        "text": "Boise State University Saxophone Quartet, alto/soprano saxophone (2018 - 2020)"
+    }, {
+        "text": "Boise State University Saxophone Choir, alto/soprano (2018 - 2019)"
+    }, {
+        "text": "Meridian Symphony, alto saxophone (2017 - 2018, 2023)"
+    }, {
+        "text": "IMEA All State Concert Band, principal alto/soprano saxophone (2018)"
+    }, {
+        "text": "NAfME All Northwest Concert Band, alto saxophone (2017)"
+    }],
+    "Teaching Experience": [{
+        "text": "Saxophone Instructor (2016 - present)"
+    }, {
+        "text": "Composition Instructor (2017 - present)"
+    }, {
+        "link": {
+            "url": "https://teamtators.org",
+            "text": "Robotics Team 2122"
+        },
+        "description": "Mechanical Engineering Mentor (2020 - present)"
+    }, {
+        "link": {
+            "url": "https://teamtators.org",
+            "text": "Robotics Team 2122"
+        },
+        "description": "Web Development/Data Analysis Mentor (2022 - present)"
+    }, {
+        "link": {
+            "url": "https://www.armadacorps.org",
+            "text": "Armada Corps"
+        },
+        "description": "Music/Woodwind - Armada Winds, Music - Rhythm Armada (2021 - present)"
+    }, {
+        "text": "iCode STEM Instructor (2021)"
+    }, {
+        "text": "Boise Community Saxophone Choir (2022)"
+    }, {
+        "text": "West Jr. High Substitute (2023)"
+    }],
+    "Awards": [{
+        "link": {
+            "url": "https://www.boisestate.edu/undergraduate-research/urca/",
+            "text": "Boise State University Undergraduate Research and Creative Activities Grant"
+        },
+        "description": "Spring 2022"
+    }, {
+        "link": {
+            "url": "https://www.idahojazzeducationendowment.com/",
+            "text": "Idaho Jazz Education Endowment"
+        },
+        "description": "Scholarship",
+        "list": [{
+            "text": "Fall 2022"
+        }, {
+            "text": "Spring 2022"
+        }, {
+            "text": "Fall 2021"
+        }, {
+            "text": "Spring 2021"
+        }, {
+            "text": "Fall 2020"
+        }]
+    }, {
+        "text": "Dean's List with High Honors",
+        "list": [{
+            "text": "Fall 2022"
+        }, {
+            "text": "Spring 2022"
+        }, {
+            "text": "Fall 2021"
+        }, {
+            "text": "Spring 2021"
+        }, {
+            "text": "Fall 2020"
+        }]
+    }, {
+        "text": "Boise State University Concerto Aria | 2020",
+        "list": [{
+            "text": "First ever to win performing own composition"
+        }]
+    }, {
+        "link": {
+            "url": "https://gtmf.org/",
+            "text": "Grand Teton Music Festival"
+        },
+        "description": "Scholarship",
+        "list": [{
+            "text": "2nd Place | 2018"
+        }]
+    }, {
+        "text": "Borah High School Awards",
+        "list": [{
+            "text": "Kat Pinney Scholarship | 2018"
+        }, {
+            "text": "Paul Tillitson Scholarship | 2018"
+        }, {
+            "text": "John Phillip Sousa Award | 2018"
+        }]
+    }, {
+        "text": "Boise State University Concert Band Composition Competition | 2018",
+        "list": [{
+            "link": {
+                "url": "/compositions/Life's Lessons",
+                "text": "Life's Lessons"
+            }
+        }]
+    }, {
+        "text": "IMEA State Solo Competition | 1st Place, 2018"
+    }],
+    "References": [{
+        "link": {
+            "url": "https://ericscottalexander.com",
+            "text": "Dr. Eric Alexander"
+        },
+        "description": "Composition Instructor",
+        "list": [{
+            "link": {
+                "url": "mailto: ericsalexander@gmail.com",
+                "text": "ericsalexander@gmail.com"
+            }
+        }]
+    }, {
+        "text": "Prof. Rodney Zuroeveste | Private saxophone instructor",
+        "list": [{
+            "link": {
+                "url": "mailto: rodneyzuro@gmail.com",
+                "text": "rodneyzuro@gmail.com"
+            }
+        }]
+    }, {
+        "link": {
+            "url": "http://derekganong.com",
+            "text": "Dr. Derek Ganong"
+        },
+        "description": "Jazz and sound engineering instructor",
+        "list": [{
+            "link": {
+                "url": "mailto: derekganong@boisestate.edu",
+                "text": "derekganong@boisestate.edu"
+            }
+        }]
+    }, {
+        "link": {
+            "url": "https://alexandrasjobeck.wixsite.com/jazz",
+            "text": "Dr. Alex Jobeck"
+        },
+        "description": "Jazz and piano instructor",
+        "list": [{
+            "link": {
+                "url": "mailto: alexsjobeckmusic@gmail.com",
+                "text": "alexsjobeckmusic@gmail.com"
+            }
+        }]
+    }, {
+        "text": "Marcellus Brown | BSU Director of Bands and private conducting instructor",
+        "list": [{
+            "link": {
+                "url": "mailto: mbrown@boisestate.edu",
+                "text": "mbrown@boisestate.edu"
+            }
+        }]
+    }, {
+        "text": "Dr. Bill Waterman | Blue Thunder Assistant Director",
+        "list": [{
+            "link": {
+                "url": "mailto: billwaterman@boisestate.edu",
+                "text": "billwaterman@boisestate.edu"
+            }
+        }]
+    }, {
+        "link": {
+            "url": "https://www.tsextonmusic.com/",
+            "text": "Dr. Tim Sexton"
+        },
+        "description": "Armada Winds Director 2018 - 2019",
+        "list": [{
+            "link": {
+                "url": "mailto: tsexton.music@gmail.com",
+                "text": "tsexton.music@gmail.com"
+            }
+        }]
+    }, {
+        "text": "David Davis | Armada Winds Director 2021 - present",
+        "list": [{
+            "link": {
+                "url": "mailto: ddavis@msd134.org",
+                "text": "ddavis@msd134.org"
+            }
+        }]
+    }, {
+        "text": "Frank Manstropaolo | Armada Corps Director",
+        "list": [{
+            "link": {
+                "url": "mailto: info@armadacorps.org",
+                "text": "info@armadacorps.org"
+            }
+        }]
+    }, {
+        "text": "Sandon Mayhew | Private saxophone instructor",
+        "list": [{
+            "link": {
+                "url": "mailto: sandonmayhew@q.com",
+                "text": "sandonmayhew@q.com"
+            }
+        }]
+    }, {
+        "text": "Prof. Jim Ogle | Meridian Symphony Director and private conducting instructor",
+        "list": [{
+            "link": {
+                "url": "mailto: jimogle@boisestate.edu",
+                "text": "jimogle@boisestate.edu"
+            }
+        }]
+    }, {
+        "text": "Mark Wibbles | Robotics Team 2122 Head Mentor",
+        "list": [{
+            "link": {
+                "url": "mailto: mjwibbles@gmail.com",
+                "text": "mjwibbles@gmail.com"
+            }
+        }]
+    }, {
+        "text": "Robert Lawton | Robotics Team 2122 Retired Mentor",
+        "list": [{
+            "link": {
+                "url": "mailto: ryblawton@gmail.com",
+                "text": "ryblawton@gmail.com"
+            }
+        }]
+    }],
+    "Education": [{
+        "text": "Boise State University | 2018 - present",
+        "list": [{
+            "text": "BM - Music Composition"
+        }, {
+            "text": "GPA 3.86"
+        }]
+    }, {
+        "text": "Colorado Institute of Musical Instrument Technology | 2021",
+        "list": [{
+            "text": "Certificate - Saxophone Repair"
+        }]
+    }],
+    "Other Experience": [{
+        "text": "CAD | 2013 - present",
+        "list": [{
+            "text": "Solidworks"
+        }, {
+            "text": "Onshape"
+        }]
+    }, {
+        "text": "Programming | 2020 - present",
+        "list": [{
+            "text": "Javascript/HTML/CSS"
+        }, {
+            "text": "Bootstrap"
+        }, {
+            "text": "Typescript"
+        }, {
+            "text": "Java"
+        }, {
+            "text": "jQuery"
+        }, {
+            "text": "SQL"
+        }, {
+            "text": "Python"
+        }]
+    }]
+}

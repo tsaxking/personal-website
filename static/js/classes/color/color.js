@@ -132,6 +132,7 @@ class Color {
      */
     get rgba() {
         return {
+            ...this.rgb,
             values: [this.r, this.g, this.b, this.a],
             /**
              * Sets the color
@@ -151,48 +152,6 @@ class Color {
                 this.g = g;
                 this.b = b;
                 this.a = a;
-
-                return this;
-            },
-            /**
-             * Sets the red value
-             * @param {Number} r Red between 0 and 255 
-             * @returns {Color} This color object
-             */
-            setRed: (r) => {
-                if (isNaN(r)) throw new Error('Invalid Color');
-                if (r > 255) throw new Error('Invalid Color');
-                if (r < 0) throw new Error('Invalid Color');
-
-                this.r = r;
-
-                return this;
-            },
-            /**
-             * Sets the green value
-             * @param {Number} g Green between 0 and 255 
-             * @returns {Color} This color object
-             */
-            setGreen: (g) => {
-                if (isNaN(g)) throw new Error('Invalid Color');
-                if (g > 255) throw new Error('Invalid Color');
-                if (g < 0) throw new Error('Invalid Color');
-
-                this.g = g;
-
-                return this;
-            },
-            /**
-             * Sets the blue value
-             * @param {Number} b Blue between 0 and 255 
-             * @returns {Color} This color object
-             */
-            setBlue: (b) => {
-                if (isNaN(b)) throw new Error('Invalid Color');
-                if (b > 255) throw new Error('Invalid Color');
-                if (b < 0) throw new Error('Invalid Color');
-
-                this.b = b;
 
                 return this;
             },
@@ -289,6 +248,7 @@ class Color {
      */
     get hexa() {
         return {
+            ...this.hex,
             values: [this.r.toString(16), this.g.toString(16), this.b.toString(16), this.a.toString(16)],
             /**
              * Sets the color
@@ -300,45 +260,6 @@ class Color {
                 this.r = c.r;
                 this.g = c.g;
                 this.b = c.b;
-
-                return this;
-            },
-            /**
-             * 
-             * @param {String} r Hex value for red 
-             * @returns {Color} This color object
-             */
-            setRed: (r) => {
-                if (r.length != 2) throw new Error('Invalid Color');
-                if (isNaN(parseInt(r, 16))) throw new Error('Invalid Color');
-
-                this.r = parseInt(r, 16);
-
-                return this;
-            },
-            /**
-             * 
-             * @param {String} g Hex value for green 
-             * @returns {Color} This color object
-             */
-            setGreen: (g) => {
-                if (g.length != 2) throw new Error('Invalid Color');
-                if (isNaN(parseInt(g, 16))) throw new Error('Invalid Color');
-
-                this.g = parseInt(g, 16);
-
-                return this;
-            },
-            /**
-             * 
-             * @param {String} b Hex value for blue 
-             * @returns {Color} This color object
-             */
-            setBlue: (b) => {
-                if (b.length != 2) throw new Error('Invalid Color');
-                if (isNaN(parseInt(b, 16))) throw new Error('Invalid Color');
-
-                this.b = parseInt(b, 16);
 
                 return this;
             },
@@ -484,48 +405,20 @@ class Color {
      * Returns the color in hsla format
      */
     get hsla() {
-        const r = this.r / 255;
-        const g = this.g / 255;
-        const b = this.b / 255;
-
-        const max = Math.max(r, g, b);
-        const min = Math.min(r, g, b);
-
-        let h;
-        let s;
-        let l = (max + min) / 2;
-
-        if (max == min) {
-            h = s = 0;
-        } else {
-            const d = max - min;
-            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-
-            switch (max) {
-                case r:
-                    h = (g - b) / d + (g < b ? 6 : 0);
-                    break;
-                case g:
-                    h = (b - r) / d + 2;
-                    break;
-                case b:
-                    h = (r - g) / d + 4;
-                    break;
-            }
-
-            h /= 6;
-        }
+        const [h, s, l] = this.hsl.values;
 
         return {
+            ...this.hsl,
             values: [h, s, l, this.a],
             /**
              * Sets the color
              * @param {Number} h Hue between 0 and 1 
              * @param {Number} s Saturation between 0 and 1
              * @param {Number} l Lightness between 0 and 1
+             * @param {Number} a Alpha between 0 and 1
              * @returns {Color} This color object
              */
-            set: (h, s, l) => {
+            set: (h, s, l, a) => {
                 if (isNaN(h) || isNaN(s) || isNaN(l)) throw new Error('Invalid Color');
                 if (h > 1 || s > 1 || l > 1) throw new Error('Invalid Color');
                 if (h < 0 || s < 0 || l < 0) throw new Error('Invalid Color');
@@ -534,57 +427,7 @@ class Color {
                 this.r = c.r;
                 this.g = c.g;
                 this.b = c.b;
-
-                return this;
-            },
-            /**
-             * Sets the hue
-             * @param {Number} h Hue between 0 and 1
-             * @returns {Color} This color object
-             */
-            setHue: (h) => {
-                if (isNaN(h)) throw new Error('Invalid Color');
-                if (h > 1) throw new Error('Invalid Color');
-                if (h < 0) throw new Error('Invalid Color');
-
-                const c = Color.fromHSL(h, this.hsl.values[1], this.hsl.values[2]);
-                this.r = c.r;
-                this.g = c.g;
-                this.b = c.b;
-
-                return this;
-            },
-            /**
-             * Sets the saturation
-             * @param {Number} s Saturation between 0 and 1
-             * @returns {Color} This color object
-             */
-            setSaturation: (s) => {
-                if (isNaN(s)) throw new Error('Invalid Color');
-                if (s > 1) throw new Error('Invalid Color');
-                if (s < 0) throw new Error('Invalid Color');
-
-                const c = Color.fromHSL(this.hsl.values[0], s, this.hsl.values[2]);
-                this.r = c.r;
-                this.g = c.g;
-                this.b = c.b;
-
-                return this;
-            },
-            /**
-             * Sets the lightness
-             * @param {Number} l Lightness between 0 and 1
-             * @returns {Color} This color object
-             */
-            setLightness: (l) => {
-                if (isNaN(l)) throw new Error('Invalid Color');
-                if (l > 1) throw new Error('Invalid Color');
-                if (l < 0) throw new Error('Invalid Color');
-
-                const c = Color.fromHSL(this.hsl.values[0], this.hsl.values[1], l);
-                this.r = c.r;
-                this.g = c.g;
-                this.b = c.b;
+                this.a = a;
 
                 return this;
             },

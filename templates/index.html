@@ -5,27 +5,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taylor Reese King</title>
-    {styles}
+    <title>King Music Studio: {title}</title>
+    <link rel="icon" href="../static/pictures/structure/tsaxking_logo.jpg">
+    <cstr cstr-type="repeat" id="styles">
+        <link rel="stylesheet" href="{style}">
+    </cstr>
 </head>
 
-<body>
-    {topScripts}
-    <header>
-        <cstr cstr-type="repeat" id="links">
-
-        </cstr>
+<body class="bg-dark">
+    <cstr cstr-type="repeat" id="allClasses">
+        <script src="{script}"></script>
+    </cstr>
+    <cstr cstr-type="repeat" id="topScripts">
+        <script src="{script}"></script>
+    </cstr>
+    <header class="shadow">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../static/pictures/structure/tsaxking_logo.jpg" alt="" srcset="" class="img-fluid cursor-pointer circle" style="width: 40px !important;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <cstr cstr-type="repeat" id="links">
+                            <script cstr-type="repeat-eval">
+                                if (cstr.dropdown) { `
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" aria-current="page" id="link-{lowercaseTitle}" role="button" data-bs-toggle="dropdown" aria-expanded="false">{name}</a>
+                                    <ul class="dropdown-menu" aria-labelledby="link-{lowercaseTitle}">
+                                        ${cstr.dropdown.map((item => { return `
+                                        <li><a class="dropdown-item ${cstr.requestedUrl === item.url ? 'active' : ''}" href="${item.url}">${item.name}</a></li>`; })).join('')}
+                                    </ul>
+                                </li>`; } else { `
+                                <li class="nav-item">
+                                    <a class="nav-link {active}" aria-current="page" id="link-{lowercaseTitle}" href="{url}">{name}</a>
+                                </li>`; }
+                            </script>
+                        </cstr>
+                    </ul>
+                    <form action="/search" class="d-flex">
+                        <input type="search" class="form-control me-2" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">
+                            <i class="material-icons">
+                                search
+                            </i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
     </header>
     <main>
-        <cstr cstr-type="repeat" id="pages">
-
-            <script src="../static/js/pages/{script}"></script>
-            <footer>
-                {footer}
-            </footer>
-        </cstr>
-    </main>
-    {bottomScripts}
+        <div class="container">
+            <div class="row mb-3 p-2">
+                <h1 class="text-center text-light">
+                    {pageTitle}
+                </h1>
+            </div>
+            {content}
+        </div>
+        <script src="../static/js/pages/{pageScript}"></script>
+    </main>{footer}
+    <cstr cstr-type="repeat" id="bottomScripts">
+        <script src="{script}"></script>
+    </cstr>
 </body>
 
 </html>

@@ -1,0 +1,42 @@
+<div class="row mb-3 d-flex justify-content-center">
+    <div class="col-md-6">
+        <div class="card bg-secondary">
+            <div class="card-header">
+                <div class="card-title">
+                    <h5 class="text-light">
+                        My Contact Information
+                    </h5>
+                </div>
+            </div>
+            <img src="../static/pictures/personal/2022-photoshoot/20221016-IMG_4057.jpg" alt="" class="card-img rounded">
+            <div class="card-body">
+                <p class="text-light">
+                    (208) 392-8139
+                    <br> <a href="mailto: taylor.reese.king@gmail.com" class="link-light">taylor.reese.king@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mb-3 d-flex justify-content-center">
+    <div class="col-md-8">
+        <h3 class="text-center text-light">
+            Or send me a message directly on here!
+        </h3>
+        <form action="/send-message" method="post">
+            <div class="form-group">
+                <label for="name" class="text-light">Name</label>
+                <input type="text" class="form-control w-50" id="name" name="name" placeholder="Enter your name" required aria-required="true">
+            </div>
+            <div class="form-group">
+                <label for="email" class="text-light">Email</label>
+                <input type="email" class="form-control w-50" id="email" name="email" placeholder="Enter your email" required aria-required="true">
+            </div>
+            <div class="form-group">
+                <label for="message" class="text-light">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="5" aria-required="true"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary my-2">Submit</button>
+        </form>
+    </div>
+</div>

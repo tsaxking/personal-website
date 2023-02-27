@@ -1,5 +1,6 @@
-# archive/
+archive/
 .env
 node_modules/
 *.db
-static/js/build.js
+static/js/build/*
+templates/build/*

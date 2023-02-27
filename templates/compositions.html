@@ -1,0 +1,25 @@
+<cstr cstr-type="repeat" id="compositionTypes">
+    <hr class="bg-light">
+    <div class="row mb-2">
+        <h3 class="text-center text-light">
+            {compositionType}
+        </h3>
+    </div>
+    <div class="row mb-3 d-flex justify-content-center">
+        <cstr cstr-type="repeat" id="compositions-{pos}">
+            <div class="card bg-dark border-0 text-light p-0 m-3" style="width: 18rem;">
+                <img src="../static/pictures/compositions/{picture}" class="card-img-top rounded shadow cursor-pointer" onclick="location.pathname=`/composition?title={compositionTitle}`">
+                <div class="card-body">
+                    <h5 class="card-title">{compositionTitle}</h5>
+                    <p class="card-text">{subtitle}</p>
+                    <div class="btn-group w-100" role="group">
+                        <a href="/compositions/{compositionTitle}" class="btn btn-primary">View</a>
+                        <button class="btn btn-success play-sample" data-sample="{sample}">
+                            <i class="material-icons">music_note</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </cstr>
+    </div>
+</cstr>

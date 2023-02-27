@@ -1,0 +1,62 @@
+{
+    "100": {
+        "name": "Unknown Error",
+        "description": "An error has occurred that has not been defined.",
+        "instructions": "Please contact the administrator.",
+        "serverCode": 500
+    },
+    "101": {
+        "name": "Must be logged in",
+        "description": "You must be logged in to perform that request.",
+        "instructions": "Please log in and try again.",
+        "serverCode": 401,
+        "link": {
+            "text": "Sign in",
+            "url": "/account/sign-in"
+        }
+    },
+    "102": {
+        "name": "Must not be logged in",
+        "description": "You must not be logged in to perform that request.",
+        "instructions": "Please log out and try again.",
+        "serverCode": 401,
+        "link": {
+            "text": "Sign out",
+            "url": "/account/sign-out"
+        }
+    },
+    "103": {
+        "name": "Not an admin",
+        "description": "You must be an administrator to perform that request.",
+        "instructions": "Please log in as an administrator and try again.",
+        "serverCode": 401,
+        "link": {
+            "text": "Sign in",
+            "url": "/account/sign-in"
+        }
+    },
+    "104": {
+        "name": "Not an institution",
+        "description": "Either you are not logged in or are not interacting as an institution",
+        "instructions": "Please log in or change your connection to an institution and try again.",
+        "serverCode": 401
+    },
+    "105": {
+        "name": "Not an account",
+        "description": "Either you are not logged in or are not interacting as an account",
+        "instructions": "Please log in or change your connection to your account and try again.",
+        "serverCode": 401
+    },
+    "106": {
+        "name": "Filled File Quota",
+        "description": "You have exceeded your quota for uploading files.",
+        "instructions": "Upload a smaller file or delete some of your existing files.",
+        "serverCode": 403
+    },
+    "404": {
+        "name": "Not Found",
+        "description": "You have sent a request that the server did not understand.",
+        "instructions": "Please check the URL and try again.",
+        "serverCode": 404
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "Acceptance": {
+        "started": "",
+        "ended": "",
+        "description": "I was given the opportunity to conduct and record Boise State University Symphonic Winds on my composition, Acceptance",
+        "picture": "/",
+        "subtitle": "Symphonic Winds records my composition, Acceptance"
+    },
+    "Conversations": {
+        "started": "",
+        "ended": "",
+        "description": "The Central Washington University Saxophone Choir invited me out to perform my composition, Conversations",
+        "picture": "/",
+        "subtitle": "CWU Saxophone Choir performs my composition, Conversations"
+    },
+    "Desk": {
+        "started": "",
+        "ended": "",
+        "description": "During the summer of 2021, I designed and built a studio desk",
+        "picture": "/",
+        "subtitle": "My custom studio desk build"
+    },
+    "Senior Recital": {
+        "started": "",
+        "ended": "",
+        "description": "Fall 2022, I performed my senior recital at Boise State University with the Boise State University Saxophone Choir, Horn Quartet, and several soloists!",
+        "picture": "/",
+        "subtitle": "My senior recital at Boise State University"
+    },
+    "sfzMusic": {
+        "started": "",
+        "ended": "",
+        "description": "I am currently working on a new website for my music business, sfzMusic",
+        "inProgress": true,
+        "picture": "/",
+        "subtitle": "sfzMusic website"
+    },
+    "Website": {
+        "started": "",
+        "ended": "",
+        "description": "taylorreeseking.com has been a work in progress since 2019, you can see it here",
+        "picture": "/",
+        "subtitle": "Development of taylorreeseking.com"
+    },
+    "Concerto for Alto Saxophone": {
+        "started": "",
+        "ended": "",
+        "description": "During Fall of 2023, I may have an opportunity to perform my concerto for alto saxophone with the Treasure Valley Concert Band directed by Marcellus Brown",
+        "inProgress": true,
+        "picture": "/",
+        "subtitle": "Concerto for Alto Saxophone performance"
+    },
+    "Web Development": {
+        "started": "",
+        "ended": "",
+        "description": "I have built a multitude of tools for my miscellaneous projects, some of which you can see on this very site!",
+        "picture": "/",
+        "subtitle": "Development of tools for my web development projects"
+    },
+    "PC Build": {
+        "started": "",
+        "ended": "",
+        "description": "I am currently working on a PC build for my music studio, you can see it here",
+        "inProgress": true,
+        "picture": "/",
+        "subtitle": "My custom PC build"
+    }
+}

@@ -1,0 +1,66 @@
+<div class="row mb-3">
+    <div class="col-md-6">
+        <div class="container-fluid">
+            <div class="row mb-3">
+                <h2 class="text-light text-center">
+                    My Compositions
+                </h2>
+            </div>
+            <div class="row mb-3">
+                <ul class="list-group">
+                    <cstr cstr-type="repeat" id="allCompositions">
+                        <li class="list-group-item d-flex align-items-start justify-content-between p-0">
+                            <div class="ms-2 me-auto p-2">
+                                <div class="fw-bold">{compositionTitle}</div>
+                                {compositionSubtitle}
+                            </div>
+                            <img src="../static/pictures/compositions/{imageSrc}" style="height: 64px !important;">
+                        </li>
+                    </cstr>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row mb-3 ">
+            <h2 class="text-light text-center ">
+                My Projects
+            </h2>
+        </div>
+
+        <div class="row mb-3 ">
+            <ul class="list-group">
+                <cstr cstr-type="repeat" id="allProjects">
+                    <li class="list-group-item d-flex align-items-start justify-content-between">
+                        <div class="ms-2 me-auto ">
+                            <div class="fw-bold ">{projectTitle}</div>
+                            {projectSubtitle}
+                        </div>
+                        <img src="../static/pictures/{imageSrc}" class="img-fluid">
+                    </li>
+                </cstr>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="row mb-3 ">
+    <h2 class="text-light text-center ">
+        Major Events
+    </h2>
+</div>
+
+<div class="row mb-3 ">
+    <ul class="list-group">
+        <cstr cstr-type="repeat" id="allEvents">
+            <li class="list-group-item d-flex align-items-start">
+                <img src="../static/pictures/{imageSrc}" class="img-fluid">
+                <div class="ms-2 me-auto ">
+                    <div class="fw-bold ">{eventTitle}</div>
+                    {eventSubtitle}
+                </div>
+            </li>
+        </cstr>
+    </ul>
+</div> -->

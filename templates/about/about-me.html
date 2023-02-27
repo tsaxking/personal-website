@@ -1,0 +1,31 @@
+<div class="row mb-3">
+    <p class="text-light">
+        Hello! I am Taylor Reese King. I am a 5th year Music Composition major at Boise State University, set to graduate in May of 2023! My musical journey started with piano at age six, I picked up the alto saxophone at 10, began composing at 13, and I am not
+        showing any signs of stopping.
+        <br>
+        <br> While my primary love is music, I have also been involved in many other activities. Through my high school years, I was a member of a local robotics team, for which I now mentor on mechanical engineering and web development. If you are interested,
+        check out <a href="https://www.teamtators.org">Team Tators</a>!
+        <br><br>Aside from acadamia, robotics, and my music career, I am building a new company called <a href="https://sfzmusic.com">sfzMusic</a> designed towards music educators in order to help them with their administrative tasks. I started on this
+        in 2022 and am working to launch it in summer of 2023!
+    </p>
+</div>
+
+
+<div class="row mb-3">
+    <div class="accordion" id="about-accordion">
+        <cstr cstr-type="repeat" id="aboutAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="{accordionLowercaseHeading}">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{accordionLowercaseHeading}" aria-expanded="false" aria-controls="collapse-{accordionLowercaseHeading}">
+                        {accordionHeading}
+                    </button>
+                </h2>
+                <div id="collapse-{accordionLowercaseHeading}" class="accordion-collapse collapse collapsed" aria-labelledby="headingOne" data-bs-parent="#{accordionLowercaseHeading}">
+                    <div class="accordion-body">
+                        {accordionContent}
+                    </div>
+                </div>
+            </div>
+        </cstr>
+    </div>
+</div>

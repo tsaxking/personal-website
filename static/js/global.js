@@ -1,5 +1,5 @@
 'use strict';
-let currentPage;
+// let currentPage;
 const months = [
     'January',
     'February',

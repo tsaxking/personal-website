@@ -53,12 +53,12 @@ function fileUpload(file, cb, cbError) {
 
 /**
  * 
- * @param {HTMLElement} input File input element
- * @param {Function} callback Callback function (bin) [{filename, data (binary), extension}]
- * @param {Array} accept Array of accepted file extensions (don't include period)
- * @param {Function} unacceptableCb Callback function for unaccepted files
+ * @param {Element} input File input element 
+ * @param {Function} callback Function to call when file is loaded 
+ * @param {Array} accept Array of accepted file types ['pdf','png','jpg']
+ * @param {Function} unacceptableCb (optional) Function to call when file is unacceptable, else it will create an alert
  */
-function readMultiFiles(input, callback, accept, unacceptableCb) {
+function readMultipleFiles(input, callback, accept, unacceptableCb) {
     if (!input.querySelector) throw new Error('input must be a node!');
     if (!callback) throw new Error('readMultipleFiles requires a callback!');
 
@@ -78,7 +78,8 @@ function readMultiFiles(input, callback, accept, unacceptableCb) {
         const splitName = file.name.split('.');
         const ext = splitName[splitName.length - 1];
         if (!accept.find(a => a.toLowerCase() == ext.toLowerCase())) {
-            unacceptableCb(file, index);
+            if (unacceptableCb) unacceptableCb(file, index);
+            else alert('File type not accepted!');
             return;
         }
 
@@ -94,6 +95,33 @@ function readMultiFiles(input, callback, accept, unacceptableCb) {
         reader.readAsBinaryString(file);
     }
     readFile(0);
+}
+
+async function readFiles(input, accept = []) {
+    if (!input.querySelector) throw new Error('input must be a node!');
+    const { files } = input;
+
+    var reader = new FileReader();
+    return await Promise.all(Array.from(files).map(async(file) => {
+        const splitName = file.name.split('.');
+        const ext = splitName[splitName.length - 1];
+        if (!accept.find(a => a.toLowerCase() == ext.toLowerCase())) {
+            alert('File type not accepted!');
+            return;
+        }
+
+        return await new Promise((resolve, reject) => {
+            reader.onloadend = (e) => {
+                // get file content
+                resolve({
+                    filename: file.name,
+                    data: e.target.result,
+                    extension: ext
+                });
+            }
+            reader.readAsBinaryString(file);
+        });
+    }));
 }
 
 function formatBytes(bytes, decimals = 2) {
