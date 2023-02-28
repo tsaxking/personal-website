@@ -5,6 +5,7 @@ const builder = require('./server-functions/page-builder');
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
+const Email = require('./server-functions/email');
 const env = process.argv[2];
 
 const app = express();
@@ -122,6 +123,24 @@ app.get('/search', (req, res) => {
     const aboutMe = getJSON('/about-me');
     const compositions = getJSON('/compositions');
     const projects = getJSON('/projects');
+});
+
+app.post('/send-message', (req, res) => {
+    console.log(req.body);
+
+    const {
+        name,
+        email,
+        message
+    } = req.body;
+
+    const e = new Email('taylor.reese.king@gmail.com', 'Message from ' + name + ' (' + email + ')');
+
+    e.message = message;
+
+    e.send();
+
+    res.redirect('/home');
 });
 
 app.get('/*', (req, res, next) => {
