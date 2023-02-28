@@ -21,13 +21,14 @@
         "script": "/about/portfolio.js",
         "pageTitle": "Portfolio",
         "build": true
-    }, {
-        "name": "Projects",
-        "lowercaseTitle": "about-projects",
-        "url": "/about/projects",
-        "script": "/about/projects.js",
-        "pageTitle": "Projects"
     }]
+}, {
+    "name": "Projects",
+    "lowercaseTitle": "projects",
+    "url": "/projects",
+    "script": "/projects.js",
+    "pageTitle": "Projects",
+    "display": false
 }, {
     "name": "Services",
     "lowercaseTitle": "services",
@@ -49,7 +50,14 @@
         "url": "/services/recording",
         "script": "/services/recording.js",
         "pageTitle": "Recording"
-    }]
+    }],
+    "display": false
+}, {
+    "name": "Lessons",
+    "lowercaseTitle": "lessons",
+    "url": "/lessons",
+    "script": "/lessons.js",
+    "pageTitle": "Lessons"
 }, {
     "name": "Compositions",
     "lowercaseTitle": "compositions",

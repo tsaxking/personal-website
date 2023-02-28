@@ -57,7 +57,6 @@ app.get('/compositions/:title', (req, res) => {
     // TODO: build composition display
     const { title } = req.params;
     const compositions = getJSON('/compositions');
-    const html = getTemplate('/compositions/display');
 
     const composition = Object.keys(compositions).reduce((acc, type) => {
         const c = compositions[type].find(c => c.title == title);
@@ -71,19 +70,40 @@ app.get('/compositions/:title', (req, res) => {
 
     render(
         getTemplate('/index'), {
-            content: page.build ? builder[page.name]() : getTemplate(page.url),
-            links: pages.map(p => ({
-                ...p,
-                _trustEval: true
-            })),
-            bottomScripts: bottomScripts.map(s => ({ script: s })),
-            topScripts: topScripts.map(s => ({ script: s })),
-            styles: styles.map(s => ({ style: s })),
+            content: builder['!CompositionDisplay'](composition),
+            links: pages.map(p => {
+                if (p.display === false) return;
+                return ({
+                    ...p,
+                    active: '',
+                    _trustEval: true,
+                    requestedUrl: req.url
+                })
+            }).filter(p => p),
+            bottomScripts: env === 'production' ? [
+                ...bottomScripts.filter(s => s.includes('http')).map(s => ({ script: s })),
+                {
+                    script: '../static/build/bottom.js'
+                }
+            ] : bottomScripts.map(s => ({ script: s })),
+            topScripts: env === 'production' ? [
+                ...topScripts.filter(s => s.includes('http')).map(s => ({ script: s })),
+                {
+                    script: '../static/build/top.js'
+                }
+            ] : topScripts.map(s => ({ script: s })),
+            styles: env === 'production' ? [
+                ...styles.filter(s => s.includes('http')).map(s => ({ style: s })),
+                {
+                    style: '../static/build/style.css'
+                }
+            ] : styles.map(s => ({ style: s })),
+            pageScript: '/composition-display.js',
             footer: getTemplate('/components/footer'),
             year: new Date().getFullYear(),
-            pageTitle: title,
-            title: title,
-            allClasses
+            pageTitle: composition.title,
+            title: composition.title,
+            allClasses: env === 'production' ? [] : allClasses
         },
         res
     );
@@ -132,12 +152,15 @@ app.get('/*', (req, res, next) => {
                 }
                 return builder[page.name]()
             })() : getTemplate(page.url),
-            links: pages.map(p => ({
-                ...p,
-                active: url.includes(p.url) ? 'active' : '',
-                _trustEval: true,
-                requestedUrl: url
-            })),
+            links: pages.map(p => {
+                if (p.display === false) return;
+                return ({
+                    ...p,
+                    active: '',
+                    _trustEval: true,
+                    requestedUrl: req.url
+                })
+            }).filter(p => p),
             bottomScripts: env === 'production' ? [
                 ...bottomScripts.filter(s => s.includes('http')).map(s => ({ script: s })),
                 {

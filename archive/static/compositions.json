@@ -8,7 +8,8 @@
         "composer_if_arranged": null,
         "display": true,
         "popup": false,
-        "video": false
+        "video": false,
+        "sampleAvailable": true
     },
     {
         "title": "Life's Lessons",
@@ -20,7 +21,8 @@
         "display": true,
         "popup": false,
         "video": false,
-        "youtube": ""
+        "youtube": "",
+        "sampleAvailable": true
     },
     {
         "title": "Concerto For Alto Saxophone",
@@ -32,7 +34,8 @@
         "display": true,
         "popup": false,
         "video": false,
-        "youtube": ""
+        "youtube": "",
+        "sampleAvailable": true
     },
     {
         "title": "Concerto For Alto Trombone",
@@ -44,7 +47,8 @@
         "display": true,
         "popup": false,
         "video": false,
-        "youtube": ""
+        "youtube": "",
+        "sampleAvailable": true
     },
     {
         "title": "Fleeting Moments",
@@ -56,7 +60,8 @@
         "composer_if_arranged": null,
         "display": true,
         "popup": false,
-        "video": false
+        "video": false,
+        "sampleAvailable": true
     },
     {
         "title": "Remembrance",
@@ -68,7 +73,8 @@
         "display": true,
         "popup": false,
         "video": false,
-        "youtube": ""
+        "youtube": "",
+        "sampleAvailable": false
     },
     {
         "title": "Appalachian Spring",
@@ -80,7 +86,8 @@
         "display": true,
         "popup": true,
         "video": false,
-        "youtube": ""
+        "youtube": "",
+        "sampleAvailable": false
     },
     {
         "title": "Olympics Show",
@@ -92,6 +99,7 @@
         "composer_if_arranged": "John Williams and Vangelis",
         "display": true,
         "popup": true,
-        "video": true
+        "video": true,
+        "sampleAvailable": false
     }
 ]

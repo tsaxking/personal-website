@@ -3,73 +3,79 @@
             "title": "Acceptance",
             "description": "We all go through struggles in life and if we don’t push forward we will always be stuck in the past. Acceptance shows the good times and the bad, but most importantly it shows how we must all be proud of our failings because they are what help us see our path to success.",
             "subtitle": "for concert band",
-            "youtube": "<iframe width='560' height='315' src='https://youtube.com/embed/carCT-SMzig' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
-            "ensemble": "",
+            "videos": [{
+                "videoLink": "https://youtube.com/embed/carCT-SMzig",
+                "videoTitle": "Acceptance Rendering",
+                "videoDescription": "Because I did not have my own concert band at my disposal, this is my rendition of Acceptance using the ComposerCloud VSTs."
+            }],
+            "ensemble": "Concert Band",
             "copyright": 2022,
             "composer_if_arranged": null,
             "display": true,
             "popup": false,
             "video": false,
             "picture": "Acceptance.jpg",
-            "sample": "Acceptance.mp3"
+            "audio": "Acceptance.mp3",
+            "composition": true,
+            "sampleAvailable": true
         },
         {
             "title": "Life's Lessons",
             "description": "Life’s Lessons is dedicated to a good friend of mine who helped me through some rough times in my junior year of high school (2017). I wrote this as a thank you for all the help they provided me with and the positive memories they gave me. Their teachings were invaluable.",
             "subtitle": "for concert band",
-            "ensemble": "",
+            "ensemble": "Concert Band",
             "copyright": 2021,
-            "composer_if_arranged": null,
             "display": true,
-            "popup": false,
-            "video": false,
-            "youtube": "",
+            "videos": [],
             "picture": "LifesLessons.jpg",
-            "sample": "LifesLessons.mp3"
+            "audio": "LifesLessons.mp3",
+            "composition": true,
+            "sampleAvailable": true
         }
     ],
     "Orchestra": [{
             "title": "Concerto For Alto Saxophone",
             "description": "This piece was written for two of my saxophone instructors over the past few years, Rodney Zuroeveste and Sandon Mayhew, who have helped me as a saxophonist, musician, but most importantly, as a person. I started writing Concerto for Alto Saxophone in April 2019 and finished it the following December. My performance of this piece won a spot in the 2020 Boise State University Concerto Aria Competition, but due to COVID-19, the concert was unfortunately cancelled so I wasn’t able to premier the orchestral version. To finish my 2020 recital at Boise State University on February 20th, I premiered the 2 piano version with Del Parkinson and Peggy Purdy, two accompanists who have always supported me. I wish to use this piece to say thank you to all my instructors who have taught me and convey a special gratitude to Rodney Zuroeveste and Sandon Mayhew.",
             "subtitle": "for orchestra",
-            "ensemble": "",
+            "ensemble": "Symphony Orchestra and Alto Saxophone",
             "copyright": 2021,
-            "composer_if_arranged": null,
             "display": true,
-            "popup": false,
-            "video": false,
-            "youtube": "",
+            "videos": [],
             "picture": "ConcertoForAltoSaxophone.jpg",
-            "sample": "ConcertoForAltoSaxophone.mp3"
+            "audio": "ConcertoForAltoSaxophone.mp3",
+            "composition": true,
+            "sampleAvailable": true
         },
         {
             "title": "Concerto For Alto Trombone",
             "description": "A good freind of mine, Wesley Nielson recently got an alto trombone and asked me to write something for him, but only under one condition: that it be 'sexy.'",
             "subtitle": "for orchestra",
-            "ensemble": "",
+            "ensemble": "Symphony Orchestra and Alto Trombone",
             "copyright": 2022,
-            "composer_if_arranged": null,
             "display": true,
-            "popup": false,
-            "video": false,
-            "youtube": "",
             "picture": "ConcertoForAltoTrombone.jpg",
-            "sample": "ConcertoForAltoTrombone.mp3"
+            "audio": "ConcertoForAltoTrombone.mp3",
+            "videos": [],
+            "composition": true,
+            "sampleAvailable": true
         }
     ],
     "Chamber Music": [{
             "title": "Fleeting Moments",
             "description": "It is my belief music is a collection of moments all put together to create one living and breathing entity. When performed, each moment only happens once and never again, but each one contributes to another. To me, this is analogous to who we, as people, are. Every single person has millions and millions of moments that they are made of which came and went in the blink of an eye. We have a way of looking back on these moments with photographs and memories, but those moments will never happen again. Each person contributes to the people’s moments around them, so let’s make the best of them. Be the best who you can be.",
             "subtitle": "for horn and piano",
-            "youtube": "<iframe width='560' height='315' src='https://youtube.com/embed/lrooTxpNwyY' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+            "videos": [{
+                "videoLink": "https://youtube.com/embed/lrooTxpNwyY",
+                "videoTitle": "Justin Granados - Horn, Peggy Purdy - Piano",
+                "videoDescription": "Recorded by Justin Granados and Peggy Purdy, this was recorded for an online concert for the Boise State University Music Department."
+            }],
             "ensemble": "Horn and Piano",
             "copyright": 2021,
-            "composer_if_arranged": null,
             "display": true,
-            "popup": false,
-            "video": false,
             "picture": "FleetingMoments.jpg",
-            "sample": "FleetingMoments.mp3"
+            "audio": "FleetingMoments.mp3",
+            "composition": true,
+            "sampleAvailable": true
         },
         {
             "title": "Remembrance",
@@ -77,52 +83,52 @@
             "subtitle": "for saxophone, cello, and piano",
             "ensemble": "Saxophone, Cello, and Piano",
             "copyright": 2019,
-            "composer_if_arranged": null,
             "display": true,
-            "popup": false,
-            "video": false,
-            "youtube": "",
+            "videos": [],
             "picture": "Remembrance.jpg",
-            "sample": "Remembrance.mp3"
+            "audio": "Remembrance.mp3",
+            "composition": true,
+            "sampleAvailable": false
         }, {
             "title": "Regrets",
-            "description": "",
+            "description": "Composed from 2021-2022, Regrets holds a special place in my heart. I was asked to compose a piece for horn quartet and fixed media, but I have never worked with any synthesizers. In doing this project, I gained an understanding of sound synthesis and how to use it to create a piece of music.<br><br>Regrets is written to convey the progression of emotions when one realizes they have messed up. There is never a sense of hope until the end, when I quote \"Dvorak's Symphony No. 9, mvt. 2\" to convey that while what happened happened, you can still move on and be at peace with yourself.",
             "subtitle": "for horn quartet and fixed media",
             "ensemble": "Horn Quartet and Fixed Media",
             "copyright": 2022,
-            "composer_if_arranged": null,
-            "display": true,
-            "popup": false,
-            "video": false,
-            "youtube": "",
+            "display": false,
+            "videos": [],
             "picture": "Regrets.jpg",
-            "sample": "Regrets.mp3"
+            "audio": "Regrets.mp3",
+            "composition": true,
+            "sampleAvailable": false
         }, {
             "title": "Conversations",
-            "description": "",
+            "description": "I started this piece in 2017 and it took me 5 years to complete it. It's in three movements and a coda:<br><br>The first is about my struggle with social anxiety. I often feel as if I have no voice and have a hard time keeping my head above the water. Throughout the beginning movement, there is at least one person not playing to represent this struggle.<br><br>The second is about the two quartets conversing with each other. When this gets performed, I want to see some sort of visual representation of this, quartet one steps forward, or some sort of body language to really help demonstrate this.<br><br>The last movement is about pairs of instruments talking to each other. At every moment throughout this movement, two parts are working together, sometimes the whole ensemble is playing but it is clear which parts coincide with each other.<br><br>The last section is similar to movement 2 but I didn't really want to describe it as a whole movement because it's the finale. This will be memorized and each member steps in front of their stands. All soprano and alto saxophones are in different time signatures but playing at the same time so their parts won't line up but combine to make a brilliant sound. As that's happening, the tenor and baritone saxophones start playing their block chords to fill the room. After a few repetitions, every part starts breaking off leaving just one voice.",
             "subtitle": "for saxophone octet",
             "ensemble": "Saxophone Octet",
             "copyright": 2022,
-            "composer_if_arranged": null,
             "display": true,
-            "popup": false,
-            "video": false,
-            "youtube": "",
+            "videos": [{
+                "videoLink": "https://www.youtube.com/embed/XYKLPyVjl-g",
+                "videoTitle": "Central Washington University Saxophone Choir",
+                "videoDescription": "I am very proud of this performance. This was the premier done beautifully by the Central Washington University Saxophone Choir on May 5th, 2022."
+            }],
             "picture": "Conversations.jpg",
-            "sample": "Conversations.mp3"
+            "audio": "Conversations.mp3",
+            "composition": true,
+            "sampleAvailable": true
         }, {
             "title": "Live Tempo",
-            "description": "",
+            "description": "A while ago, someone told me about a piece where a performer was accompanied by a soundtrack of a heartbeat. I was intrigued by this and soon after, I wanted to see if I could write a piece that the performer's <strong>live</strong> heartbeat was not only being projected as they performed, but was the tempo of the piece they were playing. I soon realized this was an excellent method to demonstrate the physical effects of performance anxiety. It turns out, this task is incredibly difficult, but after two years of trial and error, I finally figured out how to do it. I would not have been able to accomplish this without the support of Rodney Zuroeveste, who was the first person to perform this piece, the Boise State University Undergraduate Research and Creative Activities Grant that I was awarded for this in 2021, and Dr. Derek Ganong, who helped me with the technical aspects of this piece. Please enjoy!",
             "subtitle": "for solo soprano saxophone",
             "ensemble": "Soprano Saxophone",
             "copyright": 2022,
-            "composer_if_arranged": null,
-            "display": true,
-            "popup": false,
-            "video": false,
-            "youtube": "",
+            "display": false,
+            "videos": [],
             "picture": "LiveTempo.jpg",
-            "sample": "LiveTempo.mp3"
+            "audio": "LiveTempo.mp3",
+            "composition": true,
+            "sampleAvailable": false
         }
     ],
     "Arrangements": [{
@@ -131,29 +137,30 @@
             "subtitle": "for wind sextet",
             "ensemble": "Flute, Alto/Soprano Saxophone, Bassoon, Horn, Trumpet/Flugelhorn, and Piano",
             "copyright": "",
-            "composer_if_arranged": "Aarond Copland",
             "display": true,
-            "popup": true,
-            "video": false,
-            "youtube": "",
+            "youtube": [],
             "picture": "AppalachianSpring.jpg",
-            "sample": "AppalachianSpring.mp3",
-            "composition": false
+            "audio": "AppalachianSpring.mp3",
+            "composition": false,
+            "sampleAvailable": false
         },
         {
             "title": "Olympics Show",
             "description": "This was a fun project I did with a friend of mine, Josh Chastain, who wrote the drill! We just wanted to get our feet wet in marching show design so we decided on doing the Olympics for the 2020 season! (Which we all know how that turned out) This was entirely for us to learn how to write for marching band, and we have no intention of selling this music, 100% for educational purposes only.",
             "subtitle": "for marching band",
-            "youtube": "<iframe width='560' height='315' src='https://www.youtube.com/embed/Kge0AACxacY?start=3' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
-            "ensemble": "",
+            "videos": [{
+                "videoLink": "https://www.youtube.com/embed/Kge0AACxacY?start=3",
+                "videoTitle": "Olympics Show 2020",
+                "videoDescription": "Here is Josh Chastain's Drill for the Olympics Show!"
+            }],
+            "ensemble": "Marching Band",
             "copyright": "",
             "composer_if_arranged": "John Williams and Vangelis",
             "display": true,
-            "popup": true,
-            "video": true,
             "picture": "OlympicsShow.jpg",
-            "sample": "OlympicsShow.mp3",
-            "composition": false
+            "audio": "OlympicsShow.mp3",
+            "composition": false,
+            "sampleAvailable": false
         }
     ]
 }

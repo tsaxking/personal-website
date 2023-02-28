@@ -1,3 +1,9 @@
+<div class="row mb-3">
+    <p class="text-danger text-center">
+        Note: Some samples are not currently available, but will be added soon.
+    </p>
+</div>
+
 <cstr cstr-type="repeat" id="compositionTypes">
     <hr class="bg-light">
     <div class="row mb-2">
@@ -8,13 +14,13 @@
     <div class="row mb-3 d-flex justify-content-center">
         <cstr cstr-type="repeat" id="compositions-{pos}">
             <div class="card bg-dark border-0 text-light p-0 m-3" style="width: 18rem;">
-                <img src="../static/pictures/compositions/{picture}" class="card-img-top rounded shadow cursor-pointer" onclick="location.pathname=`/composition?title={compositionTitle}`">
+                <img src="../static/pictures/compositions/{picture}" class="card-img-top rounded shadow cursor-pointer" onclick="location.pathname=`/compositions/{compositionTitle}`">
                 <div class="card-body">
                     <h5 class="card-title">{compositionTitle}</h5>
                     <p class="card-text">{subtitle}</p>
                     <div class="btn-group w-100" role="group">
                         <a href="/compositions/{compositionTitle}" class="btn btn-primary">View</a>
-                        <button class="btn btn-success play-sample" data-sample="{sample}">
+                        <button class="btn btn-success play-sample {disableSample}" data-sample="{audio}">
                             <i class="material-icons">music_note</i>
                         </button>
                     </div>
@@ -23,3 +29,79 @@
         </cstr>
     </div>
 </cstr>
+
+<script>
+    let currentPlaying = null;
+    const play = async(e) => {
+        const fade = async(audio, direction) => {
+            return new Promise((res, rej) => {
+                if (direction == 'in') {
+                    direction = .1;
+                    audio.volume = 0;
+                } else {
+                    direction = -.1;
+                }
+
+                const fadeInterval = setInterval(() => {
+                    try {
+                        if (direction > 0) {
+                            if (audio.volume >= 1) {
+                                clearInterval(fadeInterval);
+                                res();
+                            } else {
+                                audio.volume += direction;
+                            }
+                        } else {
+                            if (audio.volume <= 0) {
+                                clearInterval(fadeInterval);
+                                res();
+                            } else {
+                                audio.volume += direction;
+                            }
+                        }
+                    } catch {
+                        clearInterval(fadeInterval);
+                        res();
+                    }
+                }, 50);
+            });
+        }
+
+        if (currentPlaying) {
+            await fade(currentPlaying, 'out');
+            currentPlaying.pause();
+            currentPlaying.currentTime = 0;
+            currentPlaying = null;
+        }
+
+        const audio = new Audio(`/static/audio/compositions/samples/${e.target.closest('button').dataset.sample}`);
+        console.log(audio);
+        currentPlaying = audio;
+        // fade in
+        audio.volume = 0;
+        audio.play();
+
+        await fade(audio, 'in');
+        currentPlaying = audio;
+
+        const stop = async() => {
+            await fade(audio, 'out');
+            audio.pause();
+            currentPlaying = null;
+        }
+
+        e.target.closest('button').removeEventListener('click', play);
+        e.target.closest('button').addEventListener('click', stop);
+
+        audio.addEventListener('ended', stop);
+
+        audio.addEventListener('pause', () => {
+            e.target.closest('button').removeEventListener('click', stop);
+            e.target.closest('button').addEventListener('click', play);
+        });
+    }
+
+    document.querySelectorAll('.play-sample').forEach((button) => {
+        button.addEventListener('click', play);
+    });
+</script>

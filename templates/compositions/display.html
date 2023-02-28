@@ -1,0 +1,227 @@
+<!-- Content -->
+<div class="d-none" data-composition="{isComposition}"></div>
+
+
+<div class="row mb-3">
+    <h3 class="text-light text-center">
+        <i>
+            {compositionSubtitle}
+        </i>
+    </h3>
+</div>
+<div class="row mb-3">
+    <p class="text-light">
+        {compositionDescription}
+    </p>
+</div>
+
+<div class="row mb-3">
+    <div id="mobile-box">
+        <style>
+            #pButton {
+                float: left;
+            }
+            
+            #timeline {
+                width: 90%;
+                height: 2px;
+                margin-top: 20px;
+                margin-left: 10px;
+                float: left;
+                -webkit-border-radius: 15px;
+                border-radius: 15px;
+                background: rgba(0, 0, 0, 0.3);
+            }
+            
+            #pButton {
+                margin-top: 12px;
+                cursor: pointer;
+            }
+            
+            #playhead {
+                width: 8px;
+                height: 8px;
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+                margin-top: -3px;
+                background: black;
+                cursor: pointer;
+            }
+        </style>
+        <!-- Card -->
+        <div class="card bg-secondary">
+            <div class="bg-image d-flex justify-content-center hover-overlay" data-mdb-ripple-color="light">
+                <img class="card-img-top rounded shadow" src="../static/pictures/compositions/{picture}" alt="Card image cap" style="max-width: 400px;">
+            </div>
+            <div class="card-body text-center">
+                <h5 class="h5 font-weight-bold text-light">{compositionTitle}</h5>
+                <p class="mb-0 text-light">{compositionSubtitle}</p>
+
+                <audio id="music" preload="true">
+                    <source src="../static/audio/compositions/full/{audio}">
+                </audio>
+                <div id="audioplayer">
+                    <i id="pButton" class="fas fa-play"></i>
+                    <div id="timeline">
+                        <div id="playhead"></div>
+                    </div>
+                </div>
+
+            </div>
+            <p class="text-center">
+                <span id="current-time"></span> / <span id="duration"></span>
+            </p>
+        </div>
+        <!-- Card -->
+    </div>
+</div>
+<!-- Content -->
+<div class="row mb-3">
+    <p class="text-danger text-center">
+        Currently, pdfs are not available for all compositions. Please check back later.
+    </p>
+</div>
+
+<div class="row mb-3 d-flex justify-content-center">
+    <cstr cstr-type="repeat" id="compositionVideos">
+        <div class="col-lg-6">
+            <div class="card bg-secondary">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h5 class="h5 font-weight-bold text-light">{videoTitle}</h5>
+                    </div>
+                </div>
+                <div class="card-body text-center">
+                    <div class="container-fluid">
+                        <div class="row mb-3">
+                            <div class="d-flex justify-content-center">
+                                <iframe src="{videoLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="w-100 aspect-ratio-2x1 rounded"></iframe>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <p class="mb-0 text-light">{videoDescription}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </cstr>
+</div>
+
+<script>
+    const audio = document.getElementById('music');
+
+    const update = (audioDuration) => {
+        if (!audioDuration) audioDuration = audio.duration;
+
+        const timeline = document.getElementById('timeline');
+        const playhead = document.getElementById('playhead');
+        const progress = audio.currentTime / audio.duration;
+        playhead.style.marginLeft = timeline.offsetWidth * progress + "px";
+
+        const currentTime = document.getElementById('current-time');
+        const duration = document.getElementById('duration');
+
+        const currentMinutes = Math.floor(audio.currentTime / 60);
+        const currentSeconds = Math.floor(audio.currentTime - currentMinutes * 60);
+
+        const durationMinutes = Math.floor(audioDuration / 60);
+        const durationSeconds = Math.floor(audioDuration - durationMinutes * 60);
+
+        const formatNumber = (number) => {
+            if (number < 10) {
+                return "0" + number;
+            }
+
+            return number;
+        }
+
+        currentTime.innerHTML = formatNumber(currentMinutes) + ":" + formatNumber(currentSeconds);
+        duration.innerHTML = formatNumber(durationMinutes) + ":" + formatNumber(durationSeconds);
+    }
+
+    (async() => {
+        const duration = await new Promise((resolve) => {
+            audio.addEventListener('loadedmetadata', () => {
+                resolve(audio.duration);
+            });
+        });
+
+        update(duration);
+    })();
+    let isPlaying = false;
+    /**
+     * @param {HTMLAudioElement} node
+     */
+    const play = (node) => {
+        node.play();
+        isPlaying = true;
+        document.getElementById('pButton').className = "fas fa-pause";
+    }
+
+    const pause = (node) => {
+        node.pause();
+        isPlaying = false;
+        document.getElementById('pButton').className = "fas fa-play";
+    }
+
+    const togglePlay = (node) => {
+        if (node.paused) {
+            play(node);
+        } else {
+            pause(node);
+        }
+    }
+
+
+    document.getElementById('pButton').addEventListener('click', () => {
+        togglePlay(audio);
+    });
+
+    audio.addEventListener('timeupdate', () => update());
+
+    audio.addEventListener('ended', () => {
+        pause(audio);
+        audio.currentTime = 0;
+    });
+
+    const timeline = document.getElementById('timeline');
+    const playhead = document.getElementById('playhead');
+
+    const timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
+
+    timeline.addEventListener('click', (event) => {
+        const progress = event.offsetX / timelineWidth;
+        audio.currentTime = progress * audio.duration;
+        playhead.style.marginLeft = timelineWidth * progress + "px";
+    });
+
+    playhead.addEventListener('mousedown', (event) => {
+        window.addEventListener('mousemove', mouseMove);
+        window.addEventListener('mouseup', mouseUp);
+    });
+
+    let pausedAudio = null;
+    const mouseMove = (event) => {
+        if (isPlaying) pausedAudio = true;
+        pause(audio);
+        const timelineRect = timeline.getBoundingClientRect();
+        const progress = (event.clientX - timelineRect.left) / timelineWidth;
+        audio.currentTime = progress * audio.duration;
+        playhead.style.marginLeft = timelineWidth * progress + "px";
+    }
+
+    const mouseUp = (event) => {
+        if (pausedAudio) play(audio);
+        pausedAudio = false;
+        window.removeEventListener('mousemove', mouseMove);
+        window.removeEventListener('mouseup', mouseUp);
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.code === "Space") {
+            e.preventDefault();
+            togglePlay(audio);
+        }
+    });
+</script>

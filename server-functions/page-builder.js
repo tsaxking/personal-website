@@ -12,16 +12,19 @@ const builder = {
 
             cstr1Opts.compositionTypes = Object.keys(compositions).map((type, i) => {
                 cstr2Opts['compositions-' + i] = compositions[type].map(c => {
+                    if (!c.display) return;
+                    console.log(c);
                     return {
                         ...c,
-                        compositionTitle: c.title
+                        compositionTitle: c.title,
+                        disableSample: c.sampleAvailable ? '' : 'disabled'
                     }
-                });
+                }).filter(c => c);
                 return {
                     compositionType: type,
                     pos: i
                 }
-            })
+            });
 
             return render(render(getTemplate('/compositions'), cstr1Opts), cstr2Opts);
         },
@@ -82,6 +85,19 @@ const builder = {
             // }))
         };
 
+        return render(html, cstrOpts);
+    },
+    '!CompositionDisplay': (composition) => {
+        const html = getTemplate('/compositions/display');
+        const cstrOpts = {
+            ...composition,
+            compositionDescription: composition.description,
+            isComposition: composition.composition,
+            compositionTitle: composition.title,
+            compositionSubtitle: composition.subtitle,
+            audio: composition.audio,
+            compositionVideos: composition.videos
+        };
         return render(html, cstrOpts);
     }
 };
