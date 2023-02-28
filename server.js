@@ -104,7 +104,20 @@ app.get('/compositions/:title', (req, res) => {
             year: new Date().getFullYear(),
             pageTitle: composition.title,
             title: composition.title,
-            allClasses: env === 'production' ? [] : allClasses
+            allClasses: env === 'production' ? [] : allClasses,
+            metaDescription: composition.description,
+            metaKeywords: [
+                'Composer',
+                'Music',
+                'Taylor King',
+                'Taylor Reese King',
+                'Composition',
+                'Compositions',
+                'Music Composition',
+                'Music Compositions',
+                'Musician',
+                composition.title
+            ].join(', ')
         },
         res
     );
@@ -203,7 +216,9 @@ app.get('/*', (req, res, next) => {
             year: new Date().getFullYear(),
             pageTitle: page.pageTitle || page.name,
             title: page.name,
-            allClasses: env === 'production' ? [] : allClasses
+            allClasses: env === 'production' ? [] : allClasses,
+            metaDescription: page.description,
+            metaKeywords: page.keywords.join(', ')
         },
         res
     );

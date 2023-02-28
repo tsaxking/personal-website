@@ -3,7 +3,33 @@
     "lowercaseTitle": "home",
     "url": "/home",
     "script": "/home.js",
-    "pageTitle": "Hello, and welcome to King Music Studio with Taylor Reese King!"
+    "pageTitle": "Hello, and welcome to King Music Studio with Taylor Reese King!",
+    "keywords": [
+        "Taylor Reese King",
+        "Taylor King",
+        "King Music Studio",
+        "King Music",
+        "Taylor King Music",
+        "Taylor King Music Studio",
+        "Saxophone",
+        "Composition",
+        "Music Composition",
+        "Musician",
+        "Music Lessons",
+        "Music Teacher",
+        "Music Studio",
+        "Music Recording",
+        "Music Mixing",
+        "Musician",
+        "Treasure Valley",
+        "Boise",
+        "Idaho",
+        "Boise Saxophone Lessons",
+        "Boise Saxophone Teacher",
+        "Boise Saxophone Tutor",
+        "Boise Saxophone Instructor"
+    ],
+    "description": "Taylor Reese King is a musician, sound engineer, educator, and web developer in the Treasure Valley area."
 }, {
     "name": "About",
     "lowercaseTitle": "about",
@@ -13,14 +39,32 @@
         "url": "/about/about-me",
         "script": "/about/about-me.js",
         "pageTitle": "About Taylor",
-        "build": true
+        "build": true,
+        "keywords": [
+            "Taylor Reese King",
+            "About Taylor",
+            "About Taylor King",
+            "About Taylor Reese King",
+            "About Me",
+            "About Me Taylor King",
+            "About Me Taylor Reese King"
+        ],
+        "description": "Read about Taylor Reese King, his projects, awards, and more!"
     }, {
         "name": "Portfolio",
         "lowercaseTitle": "about-portfolio",
         "url": "/about/portfolio",
         "script": "/about/portfolio.js",
         "pageTitle": "Portfolio",
-        "build": true
+        "build": true,
+        "keywords": [
+            "Taylor Reese King",
+            "Portfolio",
+            "Portfolio Taylor King",
+            "Portfolio Taylor Reese King",
+            "King Music Studio Portfolio"
+        ],
+        "description": "View Taylor Reese King's portfolio of projects, compositions, and soon to be much more!"
     }]
 }, {
     "name": "Projects",
@@ -28,7 +72,15 @@
     "url": "/projects",
     "script": "/projects.js",
     "pageTitle": "Projects",
-    "display": false
+    "display": false,
+    "keywords": [
+        "Taylor Reese King",
+        "Projects",
+        "Projects Taylor King",
+        "Projects Taylor Reese King",
+        "King Music Studio Projects"
+    ],
+    "description": "Take a look at Taylor Reese King's Projects!"
 }, {
     "name": "Services",
     "lowercaseTitle": "services",
@@ -37,19 +89,55 @@
         "lowercaseTitle": "services-lessons",
         "url": "/services/lessons",
         "script": "/services/lessons.js",
-        "pageTitle": "Lessons"
+        "pageTitle": "Lessons",
+        "keywords": [
+            "Taylor Reese King",
+            "Lessons",
+            "Lessons Taylor King",
+            "Lessons Taylor Reese King",
+            "King Music Studio Lessons",
+            "Boise Music Lessons",
+            "Boise Music Teacher",
+            "Boise Music Tutor",
+            "Boise Music Instructor",
+            "Boise Saxophone Lessons",
+            "Boise Saxophone Teacher",
+            "Boise Saxophone Tutor",
+            "Boise Saxophone Instructor",
+            "Boise Composition Lessons",
+            "Boise Composition Teacher",
+            "Boise Composition Tutor",
+            "Boise Composition Instructor"
+        ],
+        "description": "Taylor Reese King offers lessons in saxophone and composition."
     }, {
         "name": "Mixing",
         "lowercaseTitle": "services-mixing",
         "url": "/services/mixing",
         "script": "/services/mixing.js",
-        "pageTitle": "Mixing"
+        "pageTitle": "Mixing",
+        "keywords": [
+            "Taylor Reese King",
+            "Mixing",
+            "Mixing Taylor King",
+            "Mixing Taylor Reese King",
+            "King Music Studio Mixing"
+        ],
+        "description": "With several years of experience, Taylor Reese King can mix your live performances and your studio recordings."
     }, {
         "name": "Recording",
         "lowercaseTitle": "services-recording",
         "url": "/services/recording",
         "script": "/services/recording.js",
-        "pageTitle": "Recording"
+        "pageTitle": "Recording",
+        "keywords": [
+            "Taylor Reese King",
+            "Recording",
+            "Recording Taylor King",
+            "Recording Taylor Reese King",
+            "King Music Studio Recording"
+        ],
+        "description": "Taylor Reese King is slowly building a recording studio in his home. If you need a recording done right, contact him today!"
     }],
     "display": false
 }, {
@@ -57,18 +145,49 @@
     "lowercaseTitle": "lessons",
     "url": "/lessons",
     "script": "/lessons.js",
-    "pageTitle": "Lessons"
+    "pageTitle": "Lessons",
+    "keywords": [
+        "Saxophone Lessons",
+        "Saxophone Lessons Taylor King",
+        "Composition Lessons",
+        "Composition Lessons Taylor King",
+        "Music Composition Lessons",
+        "Music Composition Lessons Taylor King",
+        "Musician Lessons",
+        "Private Instructor",
+        "Music Tutor",
+        "Music Teacher",
+        "Music Studio",
+        "Music Lessons"
+    ],
+    "description": "Taylor Reese King offers lessons in saxophone and composition."
 }, {
     "name": "Compositions",
     "lowercaseTitle": "compositions",
     "url": "/compositions",
     "script": "/compositions.js",
     "pageTitle": "Compositions",
-    "build": true
+    "build": true,
+    "keywords": [
+        "Taylor Reese King",
+        "Compositions",
+        "Compositions Taylor King",
+        "Compositions Taylor Reese King",
+        "King Music Studio Compositions"
+    ],
+    "description": "View Taylor Reese King's compositions."
 }, {
     "name": "Contact",
     "lowercaseTitle": "contact",
     "url": "/contact",
     "script": "/contact.js",
-    "pageTitle": "Contact"
+    "pageTitle": "Contact",
+    "keywords": [
+        "Taylor Reese King",
+        "Contact",
+        "Contact Taylor King",
+        "Contact Taylor Reese King",
+        "King Music Studio Contact"
+    ],
+    "description": "Contact Taylor Reese King for more information about his services."
 }]
