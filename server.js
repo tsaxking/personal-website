@@ -156,7 +156,7 @@ app.get('/*', (req, res, next) => {
                 if (p.display === false) return;
                 return ({
                     ...p,
-                    active: '',
+                    active: page.url.includes(p.url) ? 'active' : '',
                     _trustEval: true,
                     requestedUrl: req.url
                 })
