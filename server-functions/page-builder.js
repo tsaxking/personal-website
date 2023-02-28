@@ -13,7 +13,6 @@ const builder = {
             cstr1Opts.compositionTypes = Object.keys(compositions).map((type, i) => {
                 cstr2Opts['compositions-' + i] = compositions[type].map(c => {
                     if (!c.display) return;
-                    console.log(c);
                     return {
                         ...c,
                         compositionTitle: c.title,

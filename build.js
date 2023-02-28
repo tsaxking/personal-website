@@ -61,18 +61,13 @@ const builder = require('./server-functions/page-builder');
     console.log('JS Build complete');
 
     // if templates/build not a folder, create it
-    if (!fs.existsSync(path.join(__dirname, 'template-build'))) {
-        fs.mkdirSync(path.join(__dirname, 'template-build'));
+    if (!fs.existsSync(path.join(__dirname, 'templates', 'build'))) {
+        fs.mkdirSync(path.join(__dirname, 'templates', 'build'));
     }
 
     Object.keys(builder).forEach((key) => {
-        if (key === '!CompositionDisplay') {
-            const compositions = Object.values(getJSON('/compositions')).flat();
-            compositions.forEach((composition) => {
-                fs.writeFileSync(path.join(__dirname, 'template-build', `${encodeURI(composition.title)}.html`), builder['!CompositionDisplay'](composition));
-            });
-            return;
-        }
-        fs.writeFileSync(path.join(__dirname, 'template-build', `${key}.html`), builder[key]());
+        if (key === '!CompositionDisplay') return;
+        const html = builder[key]();
+        fs.writeFileSync(path.join(__dirname, 'templates', 'build', `${key}.html`), html);
     });
 })();
