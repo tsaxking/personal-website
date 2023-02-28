@@ -40,7 +40,11 @@
             "ensemble": "Symphony Orchestra and Alto Saxophone",
             "copyright": 2021,
             "display": true,
-            "videos": [],
+            "videos": [{
+                "videoLink": "https://www.youtube.com/embed/huO08f16VV4?start=4490",
+                "videoTitle": "Taylor Reese King's Senior Recital",
+                "videoDescription": ""
+            }],
             "picture": "ConcertoForAltoSaxophone.jpg",
             "audio": "ConcertoForAltoSaxophone.mp3",
             "composition": true,
@@ -55,7 +59,11 @@
             "display": true,
             "picture": "ConcertoForAltoTrombone.jpg",
             "audio": "ConcertoForAltoTrombone.mp3",
-            "videos": [],
+            "videos": [{
+                "videoLink": "https://www.youtube.com/embed/huO08f16VV4?start=1734",
+                "videoTitle": "Taylor Reese King's Senior Recital",
+                "videoDescription": ""
+            }],
             "composition": true,
             "sampleAvailable": true
         }
@@ -68,6 +76,10 @@
                 "videoLink": "https://youtube.com/embed/lrooTxpNwyY",
                 "videoTitle": "Justin Granados - Horn, Peggy Purdy - Piano",
                 "videoDescription": "Recorded by Justin Granados and Peggy Purdy, this was recorded for an online concert for the Boise State University Music Department."
+            }, {
+                "videoLink": "https://www.youtube.com/embed/huO08f16VV4?start=127",
+                "videoTitle": "Taylor Reese King's Senior Recital",
+                "videoDescription": ""
             }],
             "ensemble": "Horn and Piano",
             "copyright": 2021,
@@ -96,7 +108,11 @@
             "ensemble": "Horn Quartet and Fixed Media",
             "copyright": 2022,
             "display": false,
-            "videos": [],
+            "videos": [{
+                "videoLink": "https://www.youtube.com/embed/huO08f16VV4?start=819",
+                "videoTitle": "Taylor Reese King's Senior Recital",
+                "videoDescription": ""
+            }],
             "picture": "Regrets.jpg",
             "audio": "Regrets.mp3",
             "composition": true,
@@ -112,6 +128,10 @@
                 "videoLink": "https://www.youtube.com/embed/XYKLPyVjl-g",
                 "videoTitle": "Central Washington University Saxophone Choir",
                 "videoDescription": "I am very proud of this performance. This was the premier done beautifully by the Central Washington University Saxophone Choir on May 5th, 2022."
+            }, {
+                "videoLink": "https://www.youtube.com/embed/huO08f16VV4?start=3618",
+                "videoTitle": "Taylor Reese King's Senior Recital",
+                "videoDescription": ""
             }],
             "picture": "Conversations.jpg",
             "audio": "Conversations.mp3",
@@ -124,7 +144,11 @@
             "ensemble": "Soprano Saxophone",
             "copyright": 2022,
             "display": false,
-            "videos": [],
+            "videos": [{
+                "videoLink": "https://www.youtube.com/embed/huO08f16VV4?start=3082",
+                "videoTitle": "Taylor Reese King's Senior Recital",
+                "videoDescription": ""
+            }],
             "picture": "LiveTempo.jpg",
             "audio": "LiveTempo.mp3",
             "composition": true,

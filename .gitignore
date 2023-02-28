@@ -1,4 +1,4 @@
-archive/
+archive/*
 .env
 node_modules/
 *.db
