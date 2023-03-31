@@ -32,8 +32,8 @@ class Email {
      */
     send() {
         if (inDevelopment) {
-            if (this.message) this.message = this.message.replace(new RegExp('https://sfzmusic.org', 'gi'), 'http://localhost:3000');
-            if (this.html) this.html = this.html.replace(new RegExp('https://sfzmusic.org', 'gi'), 'http://localhost:3000');
+            if (this.message) this.message = this.message.replace(new RegExp('https://taylorreeseking.com', 'gi'), 'http://localhost:8000');
+            if (this.html) this.html = this.html.replace(new RegExp('https://taylorreeseking.com', 'gi'), 'http://localhost:8000');
         }
 
         let mailOptions = {
@@ -46,9 +46,10 @@ class Email {
             bcc: this.bcc,
             attachments: Array.isArray(this.attachments) ? this.attachments : []
         }
+
         transporter.sendMail(mailOptions, (err, info) => {
-            if (err) console.error(err);
-            else console.log(info);
+            if (err) console.error('Email:', err);
+            else console.log('Email:', info);
         });
     }
 }
