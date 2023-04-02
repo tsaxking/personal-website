@@ -139,6 +139,8 @@ app.get('/search', (req, res) => {
 });
 
 app.post('/send-message', (req, res) => {
+    return res.redirect('/home');
+
     console.log(req.body);
 
     const {
