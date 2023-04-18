@@ -98,6 +98,17 @@ const builder = {
             compositionVideos: composition.videos
         };
         return render(html, cstrOpts);
+    },
+    '!Film': (film) => {
+        const { date, madeFor, html, inProgress } = film;
+
+        const filmHTML = getTemplate('/film');
+
+        return render(filmHTML, {
+            filmSubtitle: date,
+            filmDescription: `Made for: ${madeFor} <br> ${inProgress ? `<span class="text-danger">This is in progress, the video will be available once it is complete!</span>` : ""}`,
+            filmVideo: html || ""
+        });
     }
 };
 

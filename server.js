@@ -123,6 +123,69 @@ app.get('/compositions/:title', (req, res) => {
     );
 });
 
+app.get('/films/:title', (req, res) => {
+    const { title } = req.params;
+    const films = getJSON('/films');
+
+    const film = films[title];
+
+    render(
+        getTemplate('/index'),
+        {
+            content: builder['!Film'](film),
+            links: pages.map(p => {
+                if (p.display === false) return;
+                return ({
+                    ...p,
+                    active: '',
+                    _trustEval: true,
+                    requestedUrl: req.url
+                })
+            }).filter(p => p),
+            bottomScripts: env === 'production' ? [
+                ...bottomScripts.filter(s => s.includes('http')).map(s => ({ script: s })),
+                {
+                    script: '../static/build/bottom.js'
+                }
+            ] : bottomScripts.map(s => ({ script: s })),
+            topScripts: env === 'production' ? [
+                ...topScripts.filter(s => s.includes('http')).map(s => ({ script: s })),
+                {
+                    script: '../static/build/top.js'
+                }
+            ] : topScripts.map(s => ({ script: s })),
+            styles: env === 'production' ? [
+                ...styles.filter(s => s.includes('http')).map(s => ({ style: s })),
+                {
+                    style: '../static/build/style.css'
+                }
+            ] : styles.map(s => ({ style: s })),
+            pageScript: '/composition-display.js',
+            footer: getTemplate('/components/footer'),
+            year: new Date().getFullYear(),
+            pageTitle: title,
+            title: title,
+            allClasses: env === 'production' ? [] : allClasses,
+            metaDescription: film.description,
+            metaKeywords: [
+                'Composer',
+                'Music',
+                'Taylor King',
+                'Taylor Reese King',
+                'Composition',
+                'Compositions',
+                'Music Composition',
+                'Music Compositions',
+                'Musician',
+                'Film Scoring',
+                'Film Music',
+                'Sound Engineering',
+                title
+            ].join(', ')
+        }
+    )
+});
+
 app.get('/projects/:name', (req, res) => {
     const { name } = req.params;
     // TODO: build project display
@@ -181,9 +244,9 @@ app.get('/*', (req, res, next) => {
     render(
         getTemplate('/index'), {
             content: page.build ? (() => {
-                if (env === 'production') {
-                    return getTemplate('/build/' + page.name);
-                }
+                // if (env === 'production') {
+                //     return getTemplate('/build/' + page.name);
+                // }
                 return builder[page.name]()
             })() : getTemplate(page.url),
             links: pages.map(p => {
