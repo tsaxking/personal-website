@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const uuid = require('uuid').v4;
 
 /**
  * 
@@ -154,6 +155,148 @@ function getUpload(filename) {
     });
 }
 
+
+
+
+
+
+/**
+ * 
+ * @param {String} pathname Path to write the file to
+ * @returns {Function} Express Middleware
+ */
+const fileStream = (pathname, {
+    maxFileSize = 1000000000,
+    extensions
+} = {}) => {
+    return (req, res, next) => {
+        const fileId = uuid() + '-' + Date.now();
+        const {
+            headers: {
+                    'x-content-type': contentType,
+                    'x-file-name': fileName,
+                    'x-file-size': fileSize,
+                    'x-file-type': fileType,
+                    'x-file-ext': fileExt
+                }
+        } = req;
+
+        if (maxFileSize && fileSize > maxFileSize) {
+            console.log('File size is too large', fileSize, maxFileSize);
+            return res.json({
+                status: 'danger',
+                msg: 'File size is too large',
+                title: 'File Upload Error'
+            });
+        }
+
+        if (extensions && !extensions.includes(fileExt)) {
+            console.log('File type is not allowed', fileExt, extensions);
+            return res.json({
+                status: 'danger',
+                msg: 'File type is not allowed',
+                title: 'File Upload Error'
+            });
+        }
+
+        console.log('File upload started: ' + fileName + ' (' + fileSize + ' bytes)');
+        const file = fs.createWriteStream(path.resolve(__dirname, pathname, fileId + '.' + fileExt));
+
+        let total = 0;
+        req.on('data', (chunk) => {
+            file.write(chunk);
+            total += chunk.length;
+            console.log('Received chunk: ' + chunk.length + ' bytes out of ' + fileSize + ' bytes. Progress: ( ' + Math.round((total / fileSize) * 100) + '% )');
+        });
+
+        req.on('end', () => {
+            file.end();
+            req.file = {
+                id: fileId,
+                name: fileName,
+                type: fileType,
+                ext: fileExt,
+                size: fileSize,
+                contentType
+            }
+            next();
+        });
+
+        req.on('error', (err) => {
+            console.log(err);
+
+            res.json({
+                status: 'danger',
+                msg: 'An error occured while uploading the file.',
+                title: 'File Upload Error'
+            });
+        });
+
+    }
+}
+
+
+
+/**
+ * 
+ * @param {String} dir Directory to open 
+ * @param {Function} cb Callback function to run on each file 
+ * @param {Object} options Options
+ * @returns {Void}
+ */
+const openAllInFolderSync = (dir, cb, options = {}) => {
+    if (!dir) throw new Error('No directory specified');
+    if (!cb) throw new Error('No callback function specified');
+
+    if (!fs.existsSync(dir)) return;
+    if (!fs.lstatSync(dir).isDirectory()) return;
+    const files = fs.readdirSync(dir);
+    files.sort((a, b) => {
+        // put directories first
+        const aIsDir = fs.lstatSync(path.resolve(dir, a)).isDirectory();
+        const bIsDir = fs.lstatSync(path.resolve(dir, b)).isDirectory();
+
+        return aIsDir ? 1 : bIsDir ? -1 : 0;
+    });
+
+    if (options.sort) {
+        files.sort((a, b) => {
+            if (fs.lstatSync(path.resolve(dir, a)).isDirectory() || fs.lstatSync(path.resolve(dir, b)).isDirectory()) return 0;
+            return options.sort(path.resolve(dir, a), path.resolve(dir, b));
+        });
+    }
+    files.forEach(file => {
+        const filePath = path.resolve(dir, file);
+        if (fs.lstatSync(filePath).isDirectory()) openAllInFolderSync(filePath, cb, options);
+        else cb(filePath);
+    });
+}
+
+/**
+ * 
+ * @param {String} dir 
+ * @param {Function} cb
+ * @param {Object} options 
+ * @returns {Promise}
+ */
+const openAllInFolder = async(dir, cb) => {
+    if (!dir) throw new Error('No directory specified');
+    if (!cb) throw new Error('No callback function specified');
+    return new Promise((resolve, reject) => {
+        if (!fs.existsSync(dir)) return resolve();
+        if (!fs.lstatSync(dir).isDirectory()) return resolve();
+
+        fs.readdir(dir, (err, files) => {
+            if (err) return reject(err);
+            files.forEach(file => {
+                const filePath = path.resolve(dir, file);
+                if (fs.lstatSync(filePath).isDirectory()) openAllInFolder(filePath, cb);
+                else cb(filePath);
+            });
+        });
+    });
+}
+
 module.exports = {
     getJSON,
     saveJSON,
@@ -163,5 +306,8 @@ module.exports = {
     formatBytes,
     saveUpload,
     getUpload,
-    uploadMultipleFiles
+    uploadMultipleFiles,
+    fileStream,
+    openAllInFolderSync,
+    openAllInFolder
 }

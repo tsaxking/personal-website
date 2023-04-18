@@ -198,19 +198,19 @@ app.get('/*', (req, res, next) => {
             bottomScripts: env === 'production' ? [
                 ...bottomScripts.filter(s => s.includes('http')).map(s => ({ script: s })),
                 {
-                    script: '../static/build/bottom.js'
+                    script: '../static/build/bottom.min.js'
                 }
             ] : bottomScripts.map(s => ({ script: s })),
             topScripts: env === 'production' ? [
                 ...topScripts.filter(s => s.includes('http')).map(s => ({ script: s })),
                 {
-                    script: '../static/build/top.js'
+                    script: '../static/build/top.min.js'
                 }
             ] : topScripts.map(s => ({ script: s })),
             styles: env === 'production' ? [
                 ...styles.filter(s => s.includes('http')).map(s => ({ style: s })),
                 {
-                    style: '../static/build/style.css'
+                    style: '../static/build/style.min.css'
                 }
             ] : styles.map(s => ({ style: s })),
             pageScript: page.script,

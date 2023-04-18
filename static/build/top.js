@@ -1,3 +1,4 @@
+;
 class CustomBootstrap {
     static replaceAllInEl(el, parameters) {
         // replaces every instance of {{param}} with the value of parameters[param]
@@ -20,7 +21,8 @@ class CustomBootstrap {
 
         return el;
     }
-};CustomBootstrap.ButtonGroups = [];
+};
+CustomBootstrap.ButtonGroups = [];
 CustomBootstrap.ButtonGroup = class {
     /**
      * 
@@ -58,7 +60,8 @@ CustomBootstrap.ButtonGroup = class {
         this.buttons.splice(this.buttons.indexOf(button), 1);
         this.el.removeChild(button.el);
     }
-};CustomBootstrap.Button = class {
+};
+CustomBootstrap.Button = class {
     constructor({
         content = '',
         type = 'button',
@@ -126,7 +129,8 @@ CustomBootstrap.ButtonGroup = class {
     enable() {
         this.el.disabled = false;
     }
-};CustomBootstrap.cards = [];
+};
+CustomBootstrap.cards = [];
 CustomBootstrap.Card = class {
     constructor({
         body = '',
@@ -303,7 +307,8 @@ CustomBootstrap.Card = class {
     destroy() {
         this.el.remove();
     }
-};CustomBootstrap.Column = class {
+};
+CustomBootstrap.Column = class {
     constructor(options = {
         classes: [],
         attributes: {},
@@ -325,7 +330,8 @@ CustomBootstrap.Card = class {
         });
         this.el.innerHTML = this.options.content;
     }
-};CustomBootstrap.confirm = (message, options) => {
+};
+CustomBootstrap.confirm = (message, options) => {
     return new Promise((res, rej) => {
         const shake = (el) => {
             el.classList.add('animate__animated', 'animate__shakeX');
@@ -437,7 +443,8 @@ CustomBootstrap.ConfirmModal = class {
             `
         });
     }
-};CustomBootstrap.contextMenus = [];
+};
+CustomBootstrap.contextMenus = [];
 CustomBootstrap.ContextMenu = class {
     constructor(element, sections, options = {}) {
         this.element = element;
@@ -523,7 +530,8 @@ CustomBootstrap.ContextMenu = class {
         const contextmenuContainer = document.querySelector('#contextmenu-container');
         contextmenuContainer.innerHTML = '';
     }
-};CustomBootstrap.modals = [];
+};
+CustomBootstrap.modals = [];
 CustomBootstrap.Modal = class {
     constructor(options, parameters = {}) {
         this.options = options;
@@ -654,7 +662,8 @@ CustomBootstrap.Modal = class {
     hide() {
         $(this.el).modal('hide');
     }
-};const allNotifications = [];
+};
+const allNotifications = [];
 CustomBootstrap.Notification = class {
     /**
      * 
@@ -774,7 +783,8 @@ CustomBootstrap.Notification = class {
         this.removed = true;
         this.element.remove();
     }
-};CustomBootstrap.Row = class {
+};
+CustomBootstrap.Row = class {
     constructor(options = {
         columns: [],
         classes: [],
@@ -794,7 +804,8 @@ CustomBootstrap.Notification = class {
             this.el.appendChild(column.el);
         });
     }
-};CustomBootstrap.Selects = [];
+};
+CustomBootstrap.Selects = [];
 CustomBootstrap.Select = class {
     constructor(el) {
         this.el = el;
@@ -847,7 +858,9 @@ CustomBootstrap.Select = class {
     clearOptions() {
         this.el.innerHTML = '';
     }
-};;class Calendar {};class Day {
+};
+class Calendar {};
+class Day {
     /**
      * 
      * @param {Date} date date object
@@ -869,7 +882,8 @@ CustomBootstrap.Select = class {
         date.setDate(date.getDate() - 1);
         return new Day(date);
     }
-};class Month {
+};
+class Month {
     /**
      * @param {Date} date date object
      */
@@ -915,7 +929,8 @@ CustomBootstrap.Select = class {
         }
         return weeks;
     }
-};class Week {
+};
+class Week {
     /**
      * @param {Date} date date object
      */
@@ -951,7 +966,8 @@ CustomBootstrap.Select = class {
     get end() {
         return this.days[6].date;
     }
-};;class Canvas {
+};
+class Canvas {
     /**
      * Creates a new canvas
      * @param {HTMLElement} canvas the canvas element you want to create a class for
@@ -1222,7 +1238,8 @@ CustomBootstrap.Select = class {
         this.canvas.removeEventListener('mouseup', this.onend);
         this.canvas.removeEventListener('touchend', this.onend);
     }
-};class CanvasButton {
+};
+class CanvasButton {
     /**
      * @param {Object} functions Parameters for the button
      */
@@ -1329,7 +1346,8 @@ CustomBootstrap.Select = class {
 
         return x >= bx && x <= bx + width && y >= by && y <= by + height;
     }
-};;class CanvasImage {
+};;
+class CanvasImage {
     constructor(dataUrl, options = {
         x: 0,
         y: 0,
@@ -1390,7 +1408,8 @@ CustomBootstrap.Select = class {
 
         return x >= bx && x <= bx + width && y >= by && y <= by + height;
     }
-};class CustomIcon {
+};
+class CustomIcon {
     constructor(svg, {
         color = Color.fromBootstrap('light').toString('hex'),
         size = 24
@@ -1490,7 +1509,8 @@ CustomBootstrap.Select = class {
 
         return new CustomIcon(globalIcons[p][n]);
     }
-};class CanvasText {
+};
+class CanvasText {
     constructor(x, y, text, options) {
         this.x = x;
         this.y = y;
@@ -1526,7 +1546,8 @@ CustomBootstrap.Select = class {
 
         return x >= bx && x <= bx + width && y >= by && y <= by + height;
     }
-};;class PathCollection {
+};
+class PathCollection {
     constructor(paths) {
         this.paths = paths || [];
         this.paths.reverse();
@@ -1550,7 +1571,8 @@ CustomBootstrap.Select = class {
     draw(canvas) {
         this.paths.forEach(path => path.draw(canvas));
     }
-};class Path {
+};
+class Path {
     /**
      * 
      * @param {Color} color the color of the path 
@@ -1726,7 +1748,8 @@ CustomBootstrap.Select = class {
             }
         }));
     }
-};class Point {
+};
+class Point {
     /**
      * 
      * @param {Number} x between 0 and 1
@@ -1948,7 +1971,8 @@ CustomBootstrap.Select = class {
 
         canvas.context.clearRect(x * canvas.width - radius, y * canvas.height - radius, radius * 2, radius * 2);
     }
-};;;/**
+};
+/**
  * @fileoverview Color class
  * @author tsaxking
  * @license MIT
@@ -3072,7 +3096,8 @@ class Color {
 
         return [this, ...hues.map(h => Color.fromHSL(h, hsl[1], hsl[2]))];
     }
-};class Gradient {
+};
+class Gradient {
     /**
      * 
      * @param {...Color} colors - the colors that make up the gradient
@@ -3213,7 +3238,72 @@ class Color {
         });
         return this;
     }
-};;class CustomFile {};class CSV extends CustomFile {};class PDFPage {
+};
+class CustomFile {};
+class CSV extends CustomFile {};
+class PDF {
+    /**
+     * 
+     * @param {String} filename 
+     */
+    constructor(filename) {
+        /**
+         * @type {String} filename (without extension)
+         */
+        this.filename = filename;
+    }
+
+    async load() {
+        this.loadingTask = pdfjsLib.getDocument('../uploads' + this.filename);
+
+        this.pdf = await this.loadingTask.promise;
+
+        this.pages = new Array(this.pdf.numPages).fill(0).map((_, i) => new PDFPage(this.filename, i + 1, this));
+    }
+
+    async renderPages() {
+        return await Promise.all(this.pages.map(page => page.render()));
+    }
+
+    async draw(canvas, options) {
+        this.currentPageIndex = 0;
+        this.currentPage = this.pages[this.currentPageIndex];
+
+        await this.currentPage.render(canvas);
+
+        const [prev, next] = new Array(2).fill(0).map((_, i) => {
+            const color = Color.fromBoostrap('primary').rgba.setAlpha(.5).toString('hex');
+
+            return new CanvasButton({
+                onclick: () => {
+                    if (i) {
+                        this.currentPageIndex++;
+                    } else {
+                        this.currentPageIndex--;
+                    }
+
+                    this.currentPage = this.pages[this.currentPageIndex];
+
+                    this.currentPage.render(canvas);
+                },
+                onenter: () => {},
+                onleave: () => {}
+            }, {
+                x: i ? 0.05 : 0.9,
+                y: 0.4,
+                width: 0.1,
+                height: 0.2,
+                options: {
+                    color: color,
+                    borderColor: color.analagous()[0].toString('hex'),
+                    border: 1
+                },
+                text: i ? '<' : '>'
+            })
+        });
+    }
+};
+class PDFPage {
     constructor(filename, pagenum, pdf) {
         /**
          * @type {String} filename
@@ -3285,68 +3375,8 @@ class Color {
             ...options
         });
     }
-};;class PDF {
-    /**
-     * 
-     * @param {String} filename 
-     */
-    constructor(filename) {
-        /**
-         * @type {String} filename (without extension)
-         */
-        this.filename = filename;
-    }
-
-    async load() {
-        this.loadingTask = pdfjsLib.getDocument('../uploads' + this.filename);
-
-        this.pdf = await this.loadingTask.promise;
-
-        this.pages = new Array(this.pdf.numPages).fill(0).map((_, i) => new PDFPage(this.filename, i + 1, this));
-    }
-
-    async renderPages() {
-        return await Promise.all(this.pages.map(page => page.render()));
-    }
-
-    async draw(canvas, options) {
-        this.currentPageIndex = 0;
-        this.currentPage = this.pages[this.currentPageIndex];
-
-        await this.currentPage.render(canvas);
-
-        const [prev, next] = new Array(2).fill(0).map((_, i) => {
-            const color = Color.fromBoostrap('primary').rgba.setAlpha(.5).toString('hex');
-
-            return new CanvasButton({
-                onclick: () => {
-                    if (i) {
-                        this.currentPageIndex++;
-                    } else {
-                        this.currentPageIndex--;
-                    }
-
-                    this.currentPage = this.pages[this.currentPageIndex];
-
-                    this.currentPage.render(canvas);
-                },
-                onenter: () => {},
-                onleave: () => {}
-            }, {
-                x: i ? 0.05 : 0.9,
-                y: 0.4,
-                width: 0.1,
-                height: 0.2,
-                options: {
-                    color: color,
-                    borderColor: color.analagous()[0].toString('hex'),
-                    border: 1
-                },
-                text: i ? '<' : '>'
-            })
-        });
-    }
-};;class Curve {
+};
+class Curve {
     constructor(points) {
         this.points = points;
     }
@@ -3410,4 +3440,1227 @@ class Color {
             }
         }));
     }
-};;
+};
+/**
+ * 
+ * @param {String} text text to copy into clipboard 
+ */
+function copyText(text) {
+    navigator.clipboard.writeText(text);
+    createNotification('Clipboard', `Copied text: ${text}`, 'success');
+};
+/**
+ * 
+ * @param {String} name cookie name
+ * @returns cookie string
+ */
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+};
+// How long you want the animation to take, in ms
+const animationDuration = 2000;
+// Calculate how long each ‘frame’ should last if we want to update the animation 60 times per second
+const frameDuration = 1000 / 60;
+// Use that to calculate how many frames we need to complete the animation
+const totalFrames = Math.round(animationDuration / frameDuration);
+// An ease-out function that slows the count as it progresses
+const easeOutQuad = t => t * (2 - t);
+
+// The animation function, which takes an Element
+const animateCountUp = el => {
+    let frame = 0;
+    const countTo = parseInt(el.innerHTML, 10);
+    // Start the animation running 60 times per second
+    const counter = setInterval(() => {
+        frame++;
+        // Calculate our progress as a value between 0 and 1
+        // Pass that value to our easing function to get our
+        // progress on a curve
+        const progress = easeOutQuad(frame / totalFrames);
+        // Use the progress value to calculate the current count
+        const currentCount = Math.round(countTo * progress);
+
+        // If the current count has changed, update the element
+        if (parseInt(el.innerHTML, 10) !== currentCount) {
+            el.innerHTML = currentCount;
+        }
+
+        // If we’ve reached our last frame, stop the animation
+        if (frame === totalFrames) {
+            clearInterval(counter);
+        }
+    }, frameDuration);
+};
+
+// Run the animation on all elements with a class of ‘countup’
+const runCountUpAnimation = () => {
+    const countupEls = document.querySelectorAll('.countup');
+    countupEls.forEach(animateCountUp);
+};
+
+runCountUpAnimation();;
+function showElement(el) {
+    el.classList.remove('d-none');
+    // el.classList.add('d-block');
+}
+
+function hideElement(el) {
+    // el.classList.remove('d-block');
+    el.classList.add('d-none');
+}
+
+function isHidden(el) {
+    return el.classList.contains('d-none');
+}
+
+function cloak(el) {
+    el.classList.add('invisible');
+    el.classList.remove('visible');
+}
+
+function deCloak(el) {
+    el.classList.remove('invisible');
+    el.classList.add('visible');
+}
+
+// Turns html string into html object
+function createElementFromText(str) {
+    let div = document.createElement('div');
+    div.innerHTML = str;
+    return div.children[0];
+}
+
+function createElementFromSelector(selector) {
+    var pattern = /^(.*?)(?:#(.*?))?(?:\.(.*?))?(?:@(.*?)(?:=(.*?))?)?$/;
+    var matches = selector.match(pattern);
+    var element = document.createElement(matches[1] || 'div');
+    if (matches[2]) element.id = matches[2];
+    if (matches[3]) {
+        matches[3].split('.').forEach(c => {
+            element.classList.add(c);
+        });
+    }
+    if (matches[4]) element.setAttribute(matches[4], matches[5] || '');
+    return element;
+}
+
+
+function createCheckbox(id, value, classList, name, checked, func) {
+    let formCheck = document.createElement('div');
+    formCheck.classList.add('form-check');
+    formCheck.classList.add('ws-nowrap');
+
+    let input = document.createElement('input');
+    input.setAttribute('type', 'checkbox');
+    input.value = value;
+    input.id = id;
+    if (classList) classList.forEach(c => {
+        input.classList.add(c);
+    });
+
+    input.checked = checked;
+
+    if (func) input.addEventListener('change', func);
+
+
+    formCheck.appendChild(input);
+
+    if (name) {
+        let label = document.createElement('label');
+        label.classList.add('form-check-label');
+        label.classList.add('ps-2');
+        label.innerText = name;
+        formCheck.appendChild(label);
+    }
+
+    return formCheck;
+}
+
+
+/**
+ * 
+ * @param {HTMLElement} el HTML element
+ * @param {Array} sections Array of objects with title/name and items
+ * @param {Object} options Options object
+ * 
+ * @example
+ * ```
+ * createContextMenu(document.getElementById('myElement'), [
+ *  {
+ *     title: 'Title',
+ *     items: [
+ *       {
+ *          title: 'Item',
+ *         action: () => {
+ *           // do something
+ *        }
+ *    }
+ * ], {
+ *   ignoreFrom: ['input', 'textarea'], // css selectors
+ *   touchHold: {
+ *    time: 500, // ms
+ *    allowAttribute: 'data-touch-allow', // attribute to create context menu on touch hold. Use when you don't want a contextmenu to appear, ie. dragging (default: data-touch-allow)
+ *    parentTest: false // if true, will test parent elements for allowAttribute (default: false)
+ *   }
+ * });
+ * ```
+ */
+// function createContextMenu(el, sections, options) {
+//     // remove previous event listeners?
+
+//     let ignoreFrom,
+//         touchHold = {
+//             time: 500,
+//             allowAttribute: 'data-touch-allow',
+//             parentTest: false
+//         };
+//     if (options) {
+//         ignoreFrom = options.ignoreFrom;
+//         touchHold = {...touchHold, ...options.touchHold };
+//     }
+
+//     const createSections = (e) => {
+//         let ignoreEls = [];
+//         if (Array.isArray(ignoreFrom)) {
+//             ignoreFrom.forEach(i => {
+//                 el.querySelectorAll(i).forEach(_e => {
+//                     ignoreEls.push(_e);
+//                 });
+//             });
+//             // return if the element is in the ignore list or is a child of one of the ignore list elements.
+//             if (ignoreEls.some(i => i.contains(e.target))) {
+//                 // console.log('Ignoring right click');
+//                 return;
+//             }
+//         }
+
+//         e.preventDefault();
+//         const contextmenuContainer = document.querySelector('#contextmenu-container');
+
+//         const menu = document.querySelector('#contextmenu');
+//         menu.innerHTML = '';
+
+//         sections.forEach(section => {
+//             const { name, items } = section;
+//             let { title } = section;
+
+//             if (!title) title = name;
+//             // const sectionEl = document.createElement('li');
+//             const sectionTitle = createElementFromSelector('p.ws-nowrap.bg-dark.text-secondary.p-1.rounded.m-0.no-select');
+//             sectionTitle.innerHTML = title;
+//             // sectionEl.appendChild(sectionTitle);
+//             menu.appendChild(sectionTitle);
+
+//             // const sectionDivider = document.createElement('li');
+//             const sectionDividerEl = createElementFromSelector('hr.dropdown-divider.bg-light.m-0');
+//             // sectionDivider.appendChild(sectionDividerEl);
+//             menu.appendChild(sectionDividerEl);
+
+//             items.forEach(item => {
+//                 const { name, action, func, color } = item;
+//                 let { title } = item;
+//                 if (!title) title = name;
+//                 // const itemEl = document.createElement('li');
+//                 const itemElLink = createElementFromSelector('p.ws-nowrap.cursor-pointer.bg-dark.text-light.m-0.p-1.rounded');
+
+//                 itemElLink.addEventListener('mouseover', () => {
+//                     itemElLink.classList.remove('bg-dark');
+//                     itemElLink.classList.add(`bg-${color ? color : 'primary'}`);
+//                 });
+//                 itemElLink.addEventListener('mouseout', () => {
+//                     itemElLink.classList.remove(`bg-${color ? color : 'primary'}`);
+//                     itemElLink.classList.add('bg-dark');
+//                 });
+
+//                 itemElLink.innerHTML = title;
+//                 if (action) {
+//                     itemElLink.addEventListener('click', action);
+//                 } else if (func) {
+//                     itemElLink.addEventListener('click', func);
+//                 }
+//                 // itemEl.appendChild(itemElLink);
+//                 menu.appendChild(itemElLink);
+//             });
+//         });
+
+//         const { clientX: mouseX, clientY: mouseY } = e;
+//         contextmenuContainer.style.left = mouseX + 'px';
+//         contextmenuContainer.style.top = mouseY + 'px';
+//         showElement(contextmenuContainer);
+
+//         const removeMenu = (evt) => {
+//             if (evt.target == el) return;
+//             hideElement(contextmenuContainer);
+//             menu.innerHTML = '';
+//             document.removeEventListener('click', removeMenu);
+//             // document.removeEventListener('contextmenu', removeMenu);
+//         }
+
+//         document.addEventListener('click', removeMenu);
+//         // document.addEventListener('contextmenu', removeMenu);
+//     }
+
+//     el.removeEventListener('contextmenu', createSections);
+//     el.addEventListener('contextmenu', createSections);
+//     el.addEventListener('touchstart', (e) => {
+//         let runFunction = true;
+//         e.preventDefault();
+//         e.clientX = e.touches[0].clientX;
+//         e.clientY = e.touches[0].clientY;
+
+//         const touchEnd = (e) => {
+//             runFunction = false;
+//             el.removeEventListener('touchend', touchEnd);
+//             clearTimeout(timeout);
+//         }
+
+//         el.addEventListener('touchend', touchEnd);
+
+//         console.log(touchHold);
+
+//         let timeout = setTimeout(() => {
+//             if (runFunction) {
+//                 let allow = false;
+//                 if (touchHold.parentTest) {
+//                     getAllParentElements(e.target).forEach(p => {
+//                         if (p.getAttribute(touchHold.allowAttribute)) allow = true;
+//                     });
+//                 } else {
+//                     if (e.target.getAttribute(touchHold.allowAttribute)) allow = true;
+//                 }
+//                 if (allow) createSections(e);
+//             }
+//             el.removeEventListener('touchend', touchEnd);
+//         }, touchHold.time);
+//     });
+// }
+
+function createContextMenu(el, sections, options = {
+    ignoreFrom: [],
+    touchMenu: true
+}) {
+    // remove previous event listeners
+
+    const { ignoreFrom, touchMenu } = options;
+
+    const createSections = (e) => {
+        let ignoreEls = [];
+        if (Array.isArray(ignoreFrom)) {
+            ignoreFrom.forEach(i => {
+                el.querySelectorAll(i).forEach(_e => {
+                    ignoreEls.push(_e);
+                });
+            });
+            // return if the element is in the ignore list or is a child of one of the ignore list elements.
+            if (ignoreEls.some(i => i.contains(e.target))) {
+                // console.log('Ignoring right click');
+                return;
+            }
+        }
+
+        e.preventDefault();
+        const contextmenuContainer = document.querySelector('#contextmenu-container');
+
+        const menu = document.querySelector('#contextmenu');
+        menu.innerHTML = '';
+
+        sections.forEach(section => {
+            const { name, items } = section;
+            let { title } = section;
+
+            if (!title) title = name;
+            // const sectionEl = document.createElement('li');
+            const sectionTitle = createElementFromSelector('p.ws-nowrap.bg-dark.text-secondary.p-1.rounded.m-0.no-select');
+            sectionTitle.innerHTML = title;
+            // sectionEl.appendChild(sectionTitle);
+            menu.appendChild(sectionTitle);
+
+            // const sectionDivider = document.createElement('li');
+            const sectionDividerEl = createElementFromSelector('hr.dropdown-divider.bg-light.m-0');
+            // sectionDivider.appendChild(sectionDividerEl);
+            menu.appendChild(sectionDividerEl);
+
+            items.forEach(item => {
+                const { name, action, func, color } = item;
+                let { title } = item;
+                if (!title) title = name;
+                // const itemEl = document.createElement('li');
+                const itemElLink = createElementFromSelector('p.ws-nowrap.cursor-pointer.bg-dark.text-light.m-0.p-1.rounded');
+
+                itemElLink.addEventListener('mouseover', () => {
+                    itemElLink.classList.remove('bg-dark');
+                    itemElLink.classList.add(`bg-${color ? color : 'primary'}`);
+                });
+                itemElLink.addEventListener('mouseout', () => {
+                    itemElLink.classList.remove(`bg-${color ? color : 'primary'}`);
+                    itemElLink.classList.add('bg-dark');
+                });
+
+                itemElLink.innerHTML = title;
+                if (action) {
+                    itemElLink.addEventListener('click', action);
+                } else if (func) {
+                    itemElLink.addEventListener('click', func);
+                }
+                // itemEl.appendChild(itemElLink);
+                menu.appendChild(itemElLink);
+            });
+        });
+
+        if (e.type == 'touchstart') {
+            e = {
+                clientX: e.touches[0].clientX,
+                clientY: e.touches[0].clientY
+            }
+        }
+
+        const {
+            clientX: mouseX,
+            clientY: mouseY
+        } = e;
+        contextmenuContainer.style.left = mouseX + 'px';
+        contextmenuContainer.style.top = mouseY + 'px';
+        showElement(contextmenuContainer);
+
+        const removeMenu = (evt) => {
+            if (evt.target == el) return;
+            hideElement(contextmenuContainer);
+            menu.innerHTML = '';
+            document.removeEventListener('click', removeMenu);
+            // document.removeEventListener('contextmenu', removeMenu);
+        }
+
+        document.addEventListener('click', removeMenu);
+        // document.addEventListener('contextmenu', removeMenu);
+    }
+
+    el.removeEventListener('contextmenu', createSections);
+    el.addEventListener('contextmenu', createSections);
+
+    if (touchMenu) {
+        let touching = false;
+        const waitForTouch = (e) => {
+            e.preventDefault();
+            // if touch is held for .5 seconds
+            touching = true;
+
+            setTimeout(() => {
+                if (touching) {
+                    createSections(e);
+                    touching = false;
+                }
+            }, 500);
+        }
+
+        const stopTouch = (e) => {
+            e.preventDefault();
+            touching = false;
+        }
+
+        el.removeEventListener('touchstart', waitForTouch);
+        el.removeEventListener('touchend', stopTouch);
+
+        el.addEventListener('touchstart', waitForTouch);
+        el.addEventListener('touchend', stopTouch);
+
+
+    }
+}
+
+function getAllParentElements(el) {
+    let parents = [];
+    let parent = el.parentElement;
+    while (parent) {
+        parents.push(parent);
+        parent = parent.parentElement;
+    }
+    return parents;
+};
+// // Data url:
+// // Get a reference to the file input
+// const fileInput = document.querySelector('input#thing');
+
+// // Listen for the change event so we can capture the file
+// fileInput.addEventListener('change', (e) => {
+//     // Get a reference to the file
+//     const file = e.target.files[0];
+
+//     // Encode the file using the FileReader API
+//     const reader = new FileReader();
+//     reader.onloadend = () => {
+//         console.log(reader.result);
+//         // Logs data:<type>;base64,wL2dvYWwgbW9yZ...
+//     };
+//     reader.readAsDataURL(file);
+// });
+
+// function fileUploadToDataUrl(input) {
+//     // Get a reference to the file
+//     const file = input.files[0];
+
+//     // Encode the file using the FileReader API
+//     const reader = new FileReader();
+//     reader.onloadend = () => {
+//         console.log(reader.result);
+//         // Logs data:<type>;base64,wL2dvYWwgbW9yZ...
+//     };
+//     reader.readAsDataURL(file);
+// }
+
+
+
+
+
+// FileReader:
+
+function fileUpload(file, cb, cbError) {
+    if (file) {
+        var reader = new FileReader();
+        reader.readAsText(file, "UTF-8");
+        reader.onload = function(evt) {
+            if (cb) cb(evt);
+            // document.getElementById("fileContents").innerHTML = evt.target.result;
+        }
+        reader.onerror = function(evt) {
+            console.log('Error reading file');
+            if (cbError) cbError(evt);
+            // document.getElementById("fileContents").innerHTML = "error reading file";
+        }
+    }
+}
+
+/**
+ * 
+ * @param {Element} input File input element 
+ * @param {Function} callback Function to call when file is loaded 
+ * @param {Array} accept Array of accepted file types ['pdf','png','jpg']
+ * @param {Function} unacceptableCb (optional) Function to call when file is unacceptable, else it will create an alert
+ */
+function readMultipleFiles(input, callback, accept, unacceptableCb) {
+    if (!input.querySelector) throw new Error('input must be a node!');
+    if (!callback) throw new Error('readMultipleFiles requires a callback!');
+
+    const { files } = input;
+
+    var reader = new FileReader();
+    let fileBin = [];
+
+    const readFile = (index) => {
+        const file = files[index];
+
+        if (index >= files.length) {
+            callback(fileBin);
+            return;
+        }
+
+        const splitName = file.name.split('.');
+        const ext = splitName[splitName.length - 1];
+        if (!accept.find(a => a.toLowerCase() == ext.toLowerCase())) {
+            if (unacceptableCb) unacceptableCb(file, index);
+            else alert('File type not accepted!');
+            return;
+        }
+
+        reader.onloadend = (e) => {
+            // get file content
+            fileBin.push({
+                filename: file.name,
+                data: e.target.result,
+                extension: ext
+            });
+            readFile(index + 1);
+        }
+        reader.readAsBinaryString(file);
+    }
+    readFile(0);
+}
+
+async function readFiles(input, accept = []) {
+    if (!input.querySelector) throw new Error('input must be a node!');
+    const { files } = input;
+
+    var reader = new FileReader();
+    return await Promise.all(Array.from(files).map(async(file) => {
+        const splitName = file.name.split('.');
+        const ext = splitName[splitName.length - 1];
+        if (!accept.find(a => a.toLowerCase() == ext.toLowerCase())) {
+            alert('File type not accepted!');
+            return;
+        }
+
+        return await new Promise((resolve, reject) => {
+            reader.onloadend = (e) => {
+                // get file content
+                resolve({
+                    filename: file.name,
+                    data: e.target.result,
+                    extension: ext
+                });
+            }
+            reader.readAsBinaryString(file);
+        });
+    }));
+}
+
+function formatBytes(bytes, decimals = 2) {
+    if (bytes === 0) return '0 Bytes';
+
+    const k = 1024;
+    const dm = decimals < 0 ? 0 : decimals;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+    return (parseFloat((bytes / Math.pow(k, i)).toFixed(dm))) + ' ' + sizes[i];
+}
+
+function viewImageFromFileUpload(input, target) {
+    if (input.files.length > 0) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            target.setAttribute('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+};
+'use strict';
+// let currentPage;
+const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+];
+
+const week = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+];
+
+const interactEvents = [
+    'mouseover',
+    'mousemove',
+    'click',
+    'dblclick',
+    'mousedown',
+    'mouseup',
+    'mousewheel',
+    'mouseout',
+    'contextmenu',
+    'keydown',
+    'keypress',
+    'keyup',
+    'touchstart',
+    'touchend',
+    'touchmove',
+    'touchcancel'
+];
+
+const manualEvents = [
+    'click',
+    'dblclick',
+    'mousedown',
+    'mouseup',
+    'contextmenu',
+    'keydown',
+    'keypress',
+    'keyup',
+    'touchstart',
+    'touchend',
+    'touchcancel'
+];
+
+/**
+ * 
+ * @param {Array} matches matches array pulled from database OR thebluealliance API 
+ * @returns {Array} sorted array starting with qm1 and ending with finals
+ */
+function sortMatches(matches) {
+    const sortArr = [
+        'qm',
+        'qf',
+        'sf',
+        'f'
+    ];
+
+    return matches.sort((a, b) => a.number - b.number).sort((a, b) => {
+        const aIndex = sortArr.indexOf(a.compLevel || a.comp_level);
+        const bIndex = sortArr.indexOf(b.compLevel || b.comp_level);
+
+        if (aIndex > bIndex) {
+            return 1;
+        } else if (aIndex < bIndex) {
+            return -1;
+        } else {
+            return 0;
+        }
+    });
+}
+
+function filterTatorMatches(matches) {
+    return matches.filter((match) => {
+        const {
+            alliances
+        } = match;
+
+        if (alliances.red.teamKeys.includes('frc2122') || alliances.blue.teamKeys.includes('frc2122')) {
+            return true;
+        } else return false;
+    });
+}
+
+/**
+ * 
+ * @param {Date} date Target date object
+ * @param {HTMLElement} element Target element to append the date to
+ * @param {String} endMessage (OPTIONAL) Message to append to the end of the date
+ * @returns {Object} Interval object
+ */
+function countdownToDate(date, element, endMessage) {
+    // set interval to update the countdown
+    let cdInterval = setInterval(() => {
+        const now = new Date();
+        const diff = date - now;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        element.innerHTML = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+
+        if (diff < 0) {
+            clearInterval(cdInterval);
+            element.innerHTML = endMessage ? endMessage : 'Countdown finished';
+        }
+    }, 1000);
+
+    return cdInterval;
+}
+
+function convertDateStrToObj(str) {
+    // input is "2022-08-22"
+    const dateArr = str.split('-');
+    return new Date(dateArr[0], dateArr[1] - 1, dateArr[2]);
+}
+
+
+const sleep = async(n) => {
+    // sleep for 1 second
+    await new Promise(resolve => setTimeout(resolve, 1000 * n));
+    return 'done';
+};
+
+
+const convertObjToCamelCase = (obj) => {
+    try {
+        JSON.stringify(obj);
+    } catch {
+        console.error('Cannot convert to camel case due to circular reference');
+        return obj;
+    }
+
+    // convert json string to camel case using regex
+    // only convert keys
+    // if value is object, convert recursively
+
+    if (Array.isArray(obj)) return obj.map(convertObjToCamelCase);
+
+    if (typeof obj === 'object') {
+        const newObj = {};
+        for (const key in obj) {
+            if (typeof obj[key] === 'object') {
+                newObj[convertObjToCamelCase(key)] = convertObjToCamelCase(obj[key]);
+            } else {
+                newObj[convertObjToCamelCase(key)] = obj[key];
+            }
+        }
+        return newObj;
+    } else {
+        return obj.replace(/(_[a-z])/g, (match) => {
+            return match[1].toUpperCase();
+        });
+    }
+}
+
+
+const mainFunctions = {};
+
+window.isMobile =
+    (function(a) {
+        return (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4)));
+    })(navigator.userAgent || navigator.vendor || window.opera);
+
+// Chart.register(BoxPlotController, BoxAndWhiskers, LinearScale, CategoryScale);;
+class CustomNotification {
+    constructor(title, msg, color, options) {
+        this.title = title;
+        this.msg = msg;
+        this.color = color;
+        this.options = options;
+    }
+
+    create() {
+        this.el = createNotificationEl(this.title, this.msg, this.color, this.options);
+    }
+
+    static createNew(title, msg, color, options) {
+        const n = new CustomNotification(title, msg, color, options);
+        n.create();
+    }
+
+    remove() {
+        this.el.remove();
+    }
+}
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // VVVVVVVVV Creates notification container VVVVVVVVV
+    let notificationEl = document.createElement('div');
+    notificationEl.setAttribute('aria-live', 'polite');
+    notificationEl.setAttribute('aria-atomic', 'true');
+    notificationEl.style.minWidth = 'min-content';
+    notificationEl.style.minHeight = 'min-content';
+    notificationEl.style.position = 'fixed';
+    notificationEl.style.top = '56px';
+    notificationEl.style.right = '0px';
+    notificationEl.classList.add('text-light');
+
+    let innerNotificationEl = document.createElement('div');
+    innerNotificationEl.style.position = 'absolute';
+    innerNotificationEl.style.top = '0';
+    innerNotificationEl.style.right = '0';
+    innerNotificationEl.id = 'notifications';
+
+    notificationEl.appendChild(innerNotificationEl);
+
+    document.querySelector('main').appendChild(notificationEl);
+});
+
+
+
+let num = 0;
+
+// Makes toast
+function createNotificationEl(title, msg, color) {
+    let toast = document.createElement('div');
+    toast.classList.add('toast');
+    toast.classList.add(`bg-${color}`);
+    toast.classList.add('notification');
+    toast.id = 'notification-' + num;
+    toast.setAttribute('role', 'alert');
+    toast.setAttribute('aria-live', 'assertive');
+    toast.setAttribute('aria-atomic', 'true');
+
+    let header = document.createElement('div');
+    header.classList.add('toast-header');
+    header.classList.add('bg-dark');
+    header.classList.add('d-flex');
+    header.classList.add('justify-content-between');
+
+    let strong = document.createElement('strong');
+    strong.classList.add('mr-auto');
+    strong.classList.add(`text-${color}`);
+    strong.innerText = title ? title : 'Team Tators';
+    header.appendChild(strong);
+
+    let small = document.createElement('small');
+    small.classList.add('text-muted');
+    small.innerText = (new Date(Date.now())).toDateString();
+    header.appendChild(small);
+
+    let button = document.createElement('button');
+    button.setAttribute('type', 'button');
+    button.classList.add('ml-2');
+    button.classList.add('mb-1');
+    button.classList.add('bg-dark');
+    button.classList.add('border-0');
+    button.classList.add('text-light');
+    button.setAttribute('data-dismiss', 'toast');
+
+
+    let span = document.createElement('span');
+    span.setAttribute('aria-hidden', 'true');
+    span.innerHTML = '&times;';
+    button.appendChild(span);
+    header.appendChild(button);
+    toast.appendChild(header);
+
+    let body = document.createElement('div');
+    body.classList.add('toast-body');
+    body.innerText = msg;
+    toast.appendChild(body);
+
+    return toast;
+}
+
+/**
+ * 
+ * @param {String} title title, defaults to 'Team Tators'
+ * @param {String} msg content of body
+ * @param {String} color bs color
+ * @param {Number} length in seconds 
+ */
+function createNotification(title, msg, color, options) {
+    let length, permanent = false;
+
+    if (options) {
+        length = options.length;
+        permanent = options.permanent;
+    }
+
+    let notification = createNotificationEl(title, msg, color);
+
+    let removed = false;
+    const timeout = setTimeout(() => {
+        removed = true;
+        removeNotification(notification);
+    }, length ? length * 1000 : 1000 * 5);
+
+    notification.querySelector('button').addEventListener('click', () => {
+        if (!removed) {
+            removeNotification(notification);
+            clearTimeout(timeout);
+        }
+    });
+
+    document.querySelector('#notifications').appendChild(notification);
+
+    // Shows toast using bs api
+    $(`#notification-${num}`).toast({
+        animation: true,
+        autohide: !permanent,
+        delay: length ? length * 1000 : 1000 * 5
+    });
+    $(`#notification-${num}`).toast('show');
+    $(`#${notification.id}`).on('hidden.bs.toast', () => {
+        notification.remove();
+    });
+    num++;
+
+    return notification;
+}
+
+function removeNotification(notification) {
+    $(`#${notification.id}`).toast('hide');
+}
+
+function pushNotification(title, message) {
+    // Let's check if the browser supports notifications
+    if (!("Notification" in window)) {
+        // alert("This browser does not support desktop notification");
+        return;
+    }
+    // Let's check if the user is okay to get some notification
+    if (window.Notification.permission === "granted") {
+        // If it's okay let's create a notification
+        var options = {
+            body: message,
+            dir: "ltr"
+        };
+        var notification = new window.Notification(title ? title : "Team Tators", options);
+        console.log(notification);
+        return;
+    }
+    // Otherwise, we need to ask the user for permission
+    // Note, Chrome does not implement the permission static property
+    // So we have to check for NOT 'denied' instead of 'default'
+    if (Notification.permission !== 'denied') {
+        Notification.requestPermission(function(permission) {
+            // Whatever the user answers, we make sure we store the information
+            if (!('permission' in Notification)) {
+                Notification.permission = permission;
+            }
+            // If the user is okay, let's create a notification
+            if (permission === "granted") {
+                var options = {
+                    body: message,
+                    dir: "ltr"
+                };
+                var notification = new Notification(title ? title : "Team Tators", options);
+            }
+        });
+        return;
+    }
+
+    alert(`${title ? title : "Team Tators"}: ${message}`);
+
+    // At last, if the user already denied any notification, and you
+    // want to be respectful there is no need to bother them anymore.
+}
+
+// TODO: run on deployment
+// pushNotification('Team Tators: init', 'Notifications are working!');;
+class CustomRequest {
+    constructor({
+        url,
+        method = 'POST',
+        func,
+        headers,
+        body,
+        params,
+        noHeaders,
+        receive = 'JSON',
+        cached = false
+    }) {
+        this.url = url;
+        this.method = method;
+        this.func = func;
+        this.headers = headers;
+        this.body = body;
+        this.params = params;
+        this.noHeaders = noHeaders;
+        this.receive = receive;
+        this.cached = cached;
+
+        this.requestStart = Date.now();
+        this.originalUrl = url;
+        if (!url) {
+            console.error('Error: No URL provided, no request sent');
+            return;
+        }
+
+        if ((method.toUpperCase() == "GET" || method.toUpperCase() == "HEAD") && body != undefined) {
+            console.error('Cannot have body in GET or HEAD request, no request sent');
+            return;
+        }
+
+        let _headers = {};
+        if (body && !noHeaders) _headers = {...headers,
+            "Content-Type": "application/json"
+        };
+
+        this.headers = _headers;
+        this.headers['Accept'] = "application/json";
+
+        // iterates through params and puts them on the urlString as an encodedURI Variable
+        if (params) {
+            url += '?'
+            Object.keys(params).forEach(param => {
+                url += encodeURI(`${param}=${params[param]}&`);
+            });
+            url = url.slice(0, url.length - 1);
+        }
+
+        // console.log(`${method} Request: ${url}`);
+    }
+
+    async send() {
+        const data = await requestFromServer({
+            url: this.url,
+            method: this.method,
+            headers: this.headers,
+            body: this.body,
+            receive: this.receive,
+            cached: this.cached
+        });
+
+        if (this.func) {
+            if (this.func.constructor.name == 'AsyncFunction') {
+                return await this.func(data);
+            } else {
+                return this.func(data);
+            }
+        }
+
+        if (data.msg) {
+            const n = new CustomNotification(data.title, data.msg, data.color, data.options);
+            n.create();
+        }
+
+        return data;
+    }
+
+    static async sendNew(obj) {
+        const request = new CustomRequest(obj);
+        return await request.send();
+    }
+}
+
+
+let requestTimes = [],
+    totalLoadTime = 0;
+async function requestFromServer({
+    url,
+    method = 'POST',
+    func,
+    headers,
+    body,
+    params,
+    noHeaders,
+    receive = 'JSON',
+    cached = false
+}) {
+    const requestStart = Date.now();
+    const originalUrl = url;
+    if (!url) {
+        console.error('Error: No URL provided, no request sent');
+        return;
+    }
+    if ((method.toUpperCase() == "GET" || method.toUpperCase() == "HEAD") && body != undefined) {
+        console.error('Cannot have body in GET or HEAD request, no request sent');
+        return;
+    }
+
+    let _headers = {};
+    if (body && !noHeaders) _headers = {...headers,
+        "Content-Type": "application/json"
+    };
+    headers = _headers
+    headers['Accept'] = "application/json";
+
+    // iterates through params and puts them on the urlString as an encodedURI Variable
+    if (params) {
+        url += '?'
+        Object.keys(params).forEach(param => {
+            url += encodeURI(`${param}=${params[param]}&`);
+        });
+        url = url.slice(0, url.length - 1);
+    }
+    // console.log(`${method} Request: ${url}`);
+    let options = {
+        method: method.toUpperCase(),
+        body: JSON.stringify({
+            ...body,
+            date: requestStart
+        }),
+        headers: headers
+    }
+
+    let prevRequest = requestTimes.find(r => {
+        let _params = true;
+        if (r.params) {
+            _params = JSON.stringify(r.params) == JSON.stringify(params);
+        }
+        let _body = true;
+        if (r.body) {
+            _body = JSON.stringify(r.body) == JSON.stringify(body);
+        }
+        return (r.url == url && r.method == method && _body && _params);
+    });
+
+    if (prevRequest && cached) {
+        console.log(`Request found in cache, returning cached response`);
+        return prevRequest.response;
+    }
+
+
+
+    return fetch(url, options).then(res => {
+        if (receive == 'JSON') return res.json();
+        if (receive == 'TEXT') return res.text();
+        if (receive == 'BLOB') return res.blob();
+    }).then(async(data) => {
+        // console.log(data);
+
+        if (data.status == 'epic-failure') return;
+
+        // Creates notification
+        const { status, title, msg, url, wait, clearCart, notificationLength, permanent } = data;
+        if (msg) {
+            createNotification(title, msg, status, {
+                length: notificationLength,
+                permanent
+            });
+        }
+
+        if (url) setTimeout(() => {
+            location.pathname = url;
+        }, wait ? wait * 1000 : 0);
+
+        if (func) {
+            if (func.constructor.name == 'AsyncFunction') await func(data);
+            else func(data);
+        }
+        if (clearCart) window.localStorage.removeItem('cart'); // specific to my code
+        const requestEnd = Date.now();
+        const requestDelta = requestEnd - requestStart;
+        // console.log(`Time for ${method} - ${originalUrl}: ${requestDelta}`);
+        totalLoadTime += requestDelta;
+        // console.log(`Total Load Time: ${totalLoadTime}`);
+        requestTimes.push({
+            url: originalUrl,
+            start: requestStart,
+            end: requestEnd,
+            delta: requestDelta,
+            totalTime: totalLoadTime,
+            body,
+            params,
+            response: data
+        });
+        return data;
+    });
+};
+/**
+ * 
+ * @param {Date} date Date object
+ * @returns Time in am/pm instead of 24hr
+ */
+function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+}
+
+function AMPMtoMinutes(time) {
+    const [t, ap] = time.split(' ');
+    const [h, m] = t.split(':');
+    const delta = ap == 'AM' ? 0 : 12;
+
+    let minutes = ((+h + +delta) * 60) + +m;
+    return minutes;
+}
+
+function minutesToAMPM(minutes) {
+    let h = Math.floor(minutes / 60);
+    let m = minutes % 60;
+    let ap = h >= 12 ? 'PM' : 'AM';
+    h = h % 12;
+    h = h ? h : 12; // the hour '0' should be '12'
+    m = m < 10 ? '0' + m : m;
+    var strTime = h + ':' + m + ' ' + ap;
+    return strTime;
+}
+
+function convertDayToDate(dayInput) {
+    try {
+        // dayInput is a string in the format of '07/19/2022, 5:30 PM'
+        // output must be a Date object
+        const [date, time] = dayInput.split(', ');
+        const [month, day, year] = date.split('/');
+        const [_time, ampm] = time.split(' ');
+        const [hour, minute] = _time.split(':');
+        const delta = ampm.toUpperCase() == 'AM' ? 0 : 12;
+        const hours = (+hour + +delta);
+        const minutes = +minute;
+        const seconds = 0;
+        const milliseconds = 0;
+        return new Date(year, month - 1, day, hours, minutes, seconds, milliseconds);
+    } catch (e) {
+        console.log(e);
+        alert('Your date input is invalid, it must be in the format of: "mm/dd/yyyy, hh:mm AM/PM"');
+    }
+}

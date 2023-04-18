@@ -4,3 +4,4 @@ node_modules/
 *.db
 static/js/build/*
 templates/build/*
+static/build/*

@@ -1,73 +1,103 @@
 const fs = require('fs');
 const path = require('path');
-const { getJSON } = require('./server-functions/get-file');
-const builder = require('./server-functions/page-builder');
+// const ts = require('typescript');
+const { openAllInFolderSync, getJSON } = require('./server-functions/get-file');
+const UglifyJS = require("uglify-js");
+const postcss = require('postcss');
+const cssnano = require('cssnano');
+const autoprefixer = require('autoprefixer');
 
-(async() => {
-    // if static/js/build not a folder, create it
-    if (!fs.existsSync(path.join(__dirname, 'static', 'build'))) {
-        fs.mkdirSync(path.join(__dirname, 'static', 'build'));
+const cssDelimiter = '\r\n';
+const jsDelimiter = ';\r\n';
+
+
+const build = () => {
+    const styles = fs.createWriteStream(path.resolve(__dirname, './static/build/style.css'));
+    const top = fs.createWriteStream(path.resolve(__dirname, './static/build/top.js'));
+    const bottom = fs.createWriteStream(path.resolve(__dirname, './static/build/bottom.js'));
+
+    /**
+     * 
+     * @param {String} pathname 
+     * @param {fs.WriteStream} stream 
+     * @param {String} delimiter 
+     */
+    const writeFile = (pathname, stream, delimiter) => {
+        openAllInFolderSync(path.resolve(__dirname, pathname), (file) => {
+            if (file.endsWith('.md') || file.endsWith('.jpeg')) return;
+            // if (toRemove.includes(file.split('\\').pop())) return;
+            stream.write(delimiter);
+            const fileContent = fs.readFileSync(file);
+            stream.write(fileContent);
+        }, {
+            sort: (a, b) => {
+                const aContent = fs.readFileSync(a).toString();
+                const bContent = fs.readFileSync(b).toString();
+
+                // look for PRIORITY_(number)
+                const aPriority = aContent.match(/PRIORITY_(\d+)/);
+                const bPriority = bContent.match(/PRIORITY_(\d+)/);
+
+                if (aPriority && bPriority) {
+                    return aPriority[1] - bPriority[1];
+                } else if (aPriority) {
+                    return -1;
+                } else if (bPriority) {
+                    return 1;
+                }
+                return 0;
+            }
+        });
     }
 
-    const sources = getJSON('/sources');
-
-    const styles = sources.styles.reduce((acc, cur) => {
-        if (cur.includes('http')) return acc;
-        cur = cur.replace('../', './');
-        acc += fs.readFileSync(path.join(__dirname, cur), 'utf8');
-        return acc;
-    }, '');
-
-    const topScripts = sources.topScripts.reduce((acc, cur) => {
-        if (cur.includes('http')) return acc;
-        cur = cur.replace('../', './');
-        acc += fs.readFileSync(path.join(__dirname, 'static', cur), 'utf8');
-        return acc;
-    }, '');
-
-    const bottomScripts = sources.bottomScripts.reduce((acc, cur) => {
-        if (cur.includes('http')) return acc;
-        cur = cur.replace('../', './');
-        acc += fs.readFileSync(path.join(__dirname, 'static', cur), 'utf8');
-        return acc;
-    }, '');
-
-
-    const openElement = (pathname) => {
-        console.log(pathname);
-        // if it's a file, add it's relative path to the array
-        if (fs.lstatSync(pathname).isFile()) {
-            return fs.readFileSync(pathname, 'utf8');
-        } else {
-            // this is a directory
-            return fs.readdirSync(pathname).reduce((acc, file) => {
-                acc += openElement(pathname + '/' + file) + ';';
-                return acc;
-            }, '');
-        }
-    }
-
-    // get all folders and files in ./static/js/classes
-    const classes = openElement('./static/js/classes');
-
-    const topScriptBuild = classes + topScripts;
-    const bottomScriptBuild = bottomScripts;
-    const stylesBuild = styles;
-
-    fs.writeFileSync(path.join(__dirname, 'static', 'build', 'top.js'), topScriptBuild);
-    fs.writeFileSync(path.join(__dirname, 'static', 'build', 'bottom.js'), bottomScriptBuild);
-    fs.writeFileSync(path.join(__dirname, 'static', 'build', 'styles.css'), stylesBuild);
-
-    console.log('JS Build complete');
-
-    // if templates/build not a folder, create it
-    if (!fs.existsSync(path.join(__dirname, 'templates', 'build'))) {
-        fs.mkdirSync(path.join(__dirname, 'templates', 'build'));
-    }
-
-    Object.keys(builder).forEach((key) => {
-        if (key === '!CompositionDisplay') return;
-        const html = builder[key]();
-        fs.writeFileSync(path.join(__dirname, 'templates', 'build', `${key}.html`), html);
+    [
+        { path: './static/css', stream: styles, delimiter: cssDelimiter },
+        // { path: './static/js/dependencies', stream: top, delimiter: jsDelimiter },
+        { path: './static/js/classes', stream: top, delimiter: jsDelimiter },
+        // { path: './static/js/ts-build', stream: top, delimiter: jsDelimiter },
+        { path: './static/js/top', stream: top, delimiter: jsDelimiter },
+        // { path: './static/js/pre-page', stream: bottom, delimiter: jsDelimiter },
+        // { path: './static/js/pages', stream: bottom, delimiter: jsDelimiter },
+        { path: './static/js/bottom', stream: bottom, delimiter: jsDelimiter }
+    ].forEach((write) => {
+        writeFile(path.resolve(__dirname, write.path), write.stream, write.delimiter);
     });
-})();
+
+    styles.on('finish', () => {
+        console.log('Finished writing to style.css, compressing...');
+
+        const cssContent = fs.readFileSync(path.resolve(__dirname, './static/build/style.css')).toString();
+
+        postcss([autoprefixer, cssnano])
+            .process(cssContent, { from: undefined })
+            .then(result => {
+                fs.writeFileSync(path.resolve(__dirname, './static/build/style.min.css'), result.css);
+            });
+
+        styles.close();
+    });
+
+    top.on('finish', () => {
+        console.log('Finished writing to top.js, compressing...');
+        const topContent = fs.readFileSync(path.resolve(__dirname, './static/build/top.js')).toString();
+        const topResult = UglifyJS.minify(topContent);
+        fs.writeFileSync(path.resolve(__dirname, './static/build/top.min.js'), topResult.code);
+        
+        top.close();
+    });
+
+    bottom.on('finish', () => {
+        console.log('Finished writing to bottom.js, compressing...');
+        const bottomContent = fs.readFileSync(path.resolve(__dirname, './static/build/bottom.js')).toString();
+        const bottomResult = UglifyJS.minify(bottomContent);
+        fs.writeFileSync(path.resolve(__dirname, './static/build/bottom.min.js'), bottomResult.code);
+
+        bottom.close();
+    });
+
+    styles.end();
+    top.end();
+    bottom.end();
+}
+
+build();
