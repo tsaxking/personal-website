@@ -3,11 +3,6 @@
     --topNavbarHeight: 56px;
 }
 
-.sidebar-nav {
-    width: var(--offCanvas-width);
-    z-index: 1041;
-}
-
 #top-navbar {
     z-index: 99;
 }
@@ -28,7 +23,7 @@
         display: none;
     }
     main {
-        margin-left: var(--offCanvas-width);
+        /* margin-left: var(--offCanvas-width); */
         /* width: calc(100vw - var(--offCanvas-width) - 24px) !important; */
     }
     .sidebar-nav {
