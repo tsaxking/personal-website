@@ -79,7 +79,7 @@
     // █▄▄ █ ▀█ ▄█▀ █▄▄ █ ▀ █ █▄█ █▄▄ █▄▄    █▄▄ █ █ █▀  █▄▄ █▀▄ █ █▄▄ █ ▀█ ▀▄▄ █▄▄ 
 
     "Ensemble Experience": [{
-        "text": "Boise State University Symphonic Winds saxophone (2018 - present)",
+        "text": "Boise State University Symphonic Winds saxophone (2018 - 2023)",
         "list": [{
             "text": "Principal saxophone (2019 - 2022)"
         }]
@@ -234,6 +234,8 @@
     }, {
         "text": "Dean's List with High Honors",
         "list": [{
+            "text": "Spring 2023"
+        }, {
             "text": "Fall 2022"
         }, {
             "text": "Spring 2022"
@@ -406,8 +408,14 @@
             }
         }]
     }],
+
+
+
+    // ██▀ █▀▄ █ █ ▄▀▀ ▄▀▄ ▀█▀ █ ▄▀▄ █▄ █ 
+    // █▄▄ █▄▀ ▀▄█ ▀▄▄ █▀█  █  █ ▀▄▀ █ ▀█ 
+
     "Education": [{
-        "text": "Boise State University | 2018 - present",
+        "text": "Boise State University | 2018 - 2023",
         "list": [{
             "text": "BM - Music Composition"
         }, {

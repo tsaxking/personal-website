@@ -2,26 +2,36 @@
     "Homecoming": {
         "date": "Spring 2023",
         "madeFor": "Director Personal Project",
-        "inProgress": true
+        "url": "https://youtu.be/UouVUEYvY8E"
     },
     "First Words": {
         "date": "Summer 2022",
         "madeFor": "i48 Film Festival",
-        "html": "<iframe src=\\"https://player.vimeo.com/video/720449258?h=fc17bcc77f&byline=0&portrait=0\\" width=\\"640\\" height=\\"360\\" frameborder=\\"0\\" allow=\\"autoplay; fullscreen; picture-in-picture\\" allowfullscreen></iframe>\\n<p><a href=\\"https://vimeo.com/720449258\\">BurlapSackProductions_FirstWords_i482022</a> from <a href=\\"https://vimeo.com/idaho48\\">i48</a> on <a href=\\"https://vimeo.com\\">Vimeo</a>.</p>"
+        "url": "https://youtu.be/vgSPvvXDrJw"
     },
-    "Jazz Piece": {
+    "Spots of Fame": {
         "date": "Spring 2021",
         "madeFor": "Director Personal Project",
-        "html": ""
+        "url": "https://youtu.be/g__KUtXnbcY"
     },
     "Last Minute": {
         "date": "Fall 2020",
         "madeFor": "Director Personal Project",
-        "html": ""
+        "url": "https://youtu.be/VcArgnrueLQ"
     },
     "Interstellar": {
         "date": "Fall 2020",
         "madeFor": "School Project",
-        "html": ""
+        "url": "https://youtu.be/ZcFKVhYpuzk"
+    },
+    "No Country for Old Men": {
+        "date": "Fall 2020",
+        "madeFor": "School Project",
+        "url": "https://youtu.be/kdmEvXeEbCo"
+    },
+    "GrubHub Commercial": {
+        "date": "Fall 2020",
+        "madeFor": "School Project",
+        "url": "https://youtu.be/ijvI3hAK0yo"
     }
 }
