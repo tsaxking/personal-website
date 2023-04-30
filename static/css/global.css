@@ -629,37 +629,17 @@
     transform: rotate(330deg) !important;
 }
 
-.fs-black {
-    z-index: 999999999999999;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    overflow: hidden;
+.mirror-x {
+    transform: scaleX(-1) !important;
 }
 
-.fs-bg {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    background-color: hsla(0, 0%, 0%, 99%);
-    overflow: hidden;
+.mirror-y {
+    transform: scaleY(-1) !important;
 }
 
-.fs-fg {
-    position: absolute;
-    top: 50%;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    height: min-content;
-    overflow: hidden;
-}
-
-.fs-fg p {
-    margin-top: 10px;
+.circle {
+    border-radius: 50% !important;
+    aspect-ratio: 1/1 !important;
 }
 
 .material-icons {
@@ -667,9 +647,4 @@
     line-height: 0 !important;
     position: relative;
     top: -1px;
-}
-
-.circle {
-    border-radius: 50% !important;
-    aspect-ratio: 1/1 !important;
 }

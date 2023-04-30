@@ -1,0 +1,61 @@
+{
+    /*
+        "TableName": {
+            "columns": {
+                "ColumnName": {
+                    "type": "javascript type",
+                    "init": "TEXT NOT NULL (etc.)"
+                }
+            },
+            "rows": [
+                {
+                    "column": "value"
+                }
+            ],
+            "description": "TableDescription"
+        }
+    */
+
+    // note: after you have created a table, you cannot do these things:
+    //      - change the name of the table
+    //      - change the name of the columns
+    //      - change the type of the columns
+    //      - delete columns
+    //      - delete tables
+    //      - add unique columns (UNIQUE, AUTO_INCREMENT, PRIMARY KEY, etc.)
+    //      - add NOT NULL columns
+
+    "Emails": {
+        "columns": {
+            "date": {
+                "type": "date",
+                "init": "INTEGER NOT NULL"
+            },
+            "ip": {
+                "type": "string",
+                "init": "TEXT NOT NULL"
+            },
+            "message": {
+                "type": "string",
+                "init": "TEXT NOT NULL"
+            },
+            "name": {
+                "type": "string",
+                "init": "TEXT NOT NULL"
+            },
+            "email": {
+                "type": "string",
+                "init": "TEXT NOT NULL"
+            },
+            "spamResult": {
+                "type": "json",
+                "init": "TEXT NOT NULL"
+            },
+            "session": {
+                "type": "string",
+                "init": "TEXT NOT NULL"
+            }
+        },
+        "rows": []
+    }
+}

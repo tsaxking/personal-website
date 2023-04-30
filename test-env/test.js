@@ -1,0 +1,1 @@
+const SpamScanner = require("spamscanner");

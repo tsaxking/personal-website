@@ -1,5 +1,13 @@
 :root {
-    --topNavbarHeight: 56px;
+    /* 270px with dashboard, 0 just as regular */
+    --offCanvas-width: 270px;
+    /* default to 54px */
+    --topNavbarHeight: 54px;
+}
+
+.sidebar-nav {
+    width: var(--offCanvas-width);
+    z-index: 1041;
 }
 
 #top-navbar {
@@ -22,7 +30,7 @@
         display: none;
     }
     main {
-        /* margin-left: var(--offCanvas-width); */
+        margin-left: var(--offCanvas-width);
         /* width: calc(100vw - var(--offCanvas-width) - 24px) !important; */
     }
     .sidebar-nav {
@@ -45,6 +53,13 @@ main {
     /* height: calc(100vh - var(--topNavbarHeight)); */
 }
 
+.material-icons {
+    vertical-align: middle;
+    line-height: 0 !important;
+    position: relative;
+    top: -1px;
+}
+
 .sidebar-link {
     display: flex;
     align-items: center;
@@ -63,6 +78,39 @@ main {
 [aria-expanded="false"] .down-icon,
 [aria-expanded="true"] .right-icon {
     transition: all ease .25s;
+}
+
+.fs-black {
+    z-index: 999999999999999;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.fs-bg {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: hsla(0, 0%, 0%, 99%);
+    overflow: hidden;
+}
+
+.fs-fg {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: min-content;
+    overflow: hidden;
+}
+
+.fs-fg p {
+    margin-top: 10px;
 }
 
 #scheduling td[data-active="true"] {
