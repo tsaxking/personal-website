@@ -26,6 +26,7 @@
             // "ignore": [], // ignore files from this stream
             // "priority": [], // put these files at the top of this stream
             "files": [
+                "/socket.io/socket.io.js --ignore-build",
                 "https://code.jquery.com/jquery-3.1.1.min.js --ignore-build",
                 "https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.js --ignore-build",
                 "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js --ignore-build",
