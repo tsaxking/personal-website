@@ -207,7 +207,7 @@ app.get('/compositions/:title', async(req, res) => {
                     requestedUrl: req.url
                 })
             }).filter(p => p),
-            pageScript: '/composition-display.js',
+            pageScript: 'composition-display.js',
             footer: getTemplateSync('components/footer'),
             year: new Date().getFullYear(),
             pageTitle: composition.title,
@@ -250,8 +250,8 @@ app.get('/films/:title', async(req, res) => {
                     requestedUrl: req.url
                 })
             }).filter(p => p),
-            pageScript: '/composition-display.js',
-            footer: getTemplateSync('/components/footer'),
+            pageScript: 'composition-display.js',
+            footer: getTemplateSync('components/footer'),
             year: new Date().getFullYear(),
             pageTitle: title,
             title: title,
@@ -286,10 +286,10 @@ app.get('/search', (req, res) => {
     const { search } = req.query;
     // TODO: search through all json and html files
 
-    const pages = getJSONSync('/pages');
-    const aboutMe = getJSONSync('/about-me');
-    const compositions = getJSONSync('/compositions');
-    const projects = getJSONSync('/projects');
+    const pages = getJSONSync('pages');
+    const aboutMe = getJSONSync('about-me');
+    const compositions = getJSONSync('compositions');
+    const projects = getJSONSync('projects');
 });
 
 
@@ -401,7 +401,7 @@ app.get('/*', (req, res) => {
     const errors = getJSONSync('error-codes');
 
     render(
-        getTemplateSync('error'), {
+        getTemplateSync('old-error'), {
             ...errors[404]
         },
         res
