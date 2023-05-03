@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sfzMusic: Error {code}</title>
+    <link rel="icon" href="../static/pictures/structure/tsaxking_logo.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark text-light">
+    <div class="container">
+        <div class="row mb-1">
+            <h1 class="text-center text-capitalize">{serverCode}: {name}</h1>
+            <pre class="bg-secondary text-lime p-2 w-100 rounded">{description}</pre>
+        </div>
+
+        <div class="row mb-1">
+            <!-- Instructions -->
+            <div class="col-12">
+                <h2 class="text-center">Instructions</h2>
+                <p>{instructions}</p>
+            </div>
+        </div>
+
+        <div class="row mb-1">
+            <h2 class="text-center">Actions</h2>
+        </div>
+
+        <div class="row mb-1">
+            <div class="col-6">
+                <button class="btn btn-primary cursor-pointer">Go Back</button>
+                <script>
+                    document.querySelector('.btn-primary').addEventListener('click', () => {
+                        window.history.back();
+                    });
+                </script>
+            </div>
+            <div class="col-6">
+                <a href="{linkUrl}" class="btn btn-primary">{linkText}</a>
+            </div>
+        </div>
+    </div>
+</body>

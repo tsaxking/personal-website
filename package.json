@@ -10,7 +10,8 @@
     "build": "node ./build/build.js",
     "update": "npm i && node ./build/server-update.js",
     "test-env": "node ./test-env/test.js",
-    "debug": "node ./test-env/debugger.js"
+    "debug": "node ./test-env/debugger.js",
+    "lite": "node server.js prod"
   },
   "repository": {
     "type": "git",

@@ -7,7 +7,7 @@ const ObjectsToCsv = require('objects-to-csv');
 const { getClientIp } = require('request-ip');
 const { Session } = require('./server-functions/structure/sessions');
 const builder = require('./server-functions/page-builder');
-const { getJSONSync, getTemplateSync, getJSON } = require('./server-functions/files');
+const { getJSONSync, getTemplateSync, getJSON, log } = require('./server-functions/files');
 const { detectSpam, emailValidation } = require('./server-functions/middleware/spam-detection');
 const Email = require('./server-functions/structure/email');
 const { render } = require('node-html-constructor').v3;
@@ -458,23 +458,8 @@ app.use((req, res, next) => {
 
     logCache.push(csvObj);
 
-    new ObjectsToCsv([csvObj]).toDisk('./logs.csv', { append: true });
+    log('requests', csvObj);
 });
-
-
-
-const clearLogs = () => {
-    fs.writeFileSync('./logs.csv', '');
-    logCache = [];
-}
-
-const timeTo12AM = 1000 * 60 * 60 * 24 - Date.now() % (1000 * 60 * 60 * 24);
-console.log('Clearing logs in', timeTo12AM / 1000 / 60, 'minutes');
-setTimeout(() => {
-    clearLogs();
-    setInterval(clearLogs, 1000 * 60 * 60 * 24);
-}, timeTo12AM);
-
 
 server.listen(PORT, () => {
     console.log('------------------------------------------------');
