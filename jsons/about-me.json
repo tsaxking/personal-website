@@ -451,6 +451,12 @@
     }, {
         "text": "Web Development and Programming | 2020 - present",
         "list": [{
+            "text": "Svelte"
+        }, {
+            "text": "Deno"
+        }, {
+            "text": "NodeJS"
+        }, {
             "text": "Javascript/HTML/CSS"
         }, {
             "text": "Bootstrap"
