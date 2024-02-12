@@ -36,7 +36,13 @@
                             <div class="fw-bold ">{projectTitle}</div>
                             {projectSubtitle}
                         </div>
-                        <img src="../static/pictures/{imageSrc}" class="img-fluid">
+                        <script type="eval">
+                            if (cstr.picture !== '/') {
+                                return `<img src="../static/pictures/projects/${cstr.picture}" style="height: 64px !important;">`;
+                            } else {
+                                return '';
+                            }
+                        </script>
                     </li>
                 </cstr>
             </ul>
