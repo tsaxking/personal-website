@@ -18,13 +18,13 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/home">
-                    <img src="../static/pictures/structure/tsaxking_logo.jpg" alt="" srcset="" class="img-fluid cursor-pointer circle" style="width: 40px !important;">
+                    <img src="../static/pictures/structure/tsaxking_logo.jpg" alt="" srcset="" class="img-fluid cursor-pointer rounded" style="width: 40px !important; height: 40px !important; border-radius: 50% !important;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
                         <cstr cstr-type="repeat" id="links">
                             <script cstr-type="repeat-eval">
                                 if (cstr.dropdown) { `
@@ -41,15 +41,16 @@
                             </script>
                         </cstr>
                     </ul>
-                    <!-- <form action="/search" class="d-flex">
-                        <input type="search" class="form-control me-2" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-primary" type="submit">
-                            <i class="material-icons">
-                                search
-                            </i>
-                        </button>
-                    </form> -->
                 </div>
+                <a href="https://www.facebook.com/taylorking99" target="_blank" class="link-light link-no-style mx-1" style="height: 24px !important; width: 24px !important; text-decoration: none !important;">
+                    <i class="fa-brands fa-facebook fa-xl"></i>
+                </a>
+                <a href="https://www.instagram.com/t.sax.king" target="_blank" class="link-light link-no-style mx-1" style="height: 24px !important; width: 24px !important; text-decoration: none !important;">
+                    <i class="fa-brands fa-instagram fa-xl"></i>
+                </a>
+                <a href="https://github.com/tsaxking" target="_blank" class="link-light link-no-style mx-1" style="height: 24px !important; width: 24px !important; text-decoration: none !important;">
+                    <i class="fa-brands fa-github fa-xl"></i>
+                </a>
             </div>
         </nav>
     </header>

@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/tsaxking/template#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@gerhobbelt/gitignore-parser": "^0.2.0-9",
     "autoprefixer": "^10.4.14",
     "axios": "^1.4.0",
@@ -34,6 +35,7 @@
     "deep-email-validator": "^0.1.21",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "font-awesome": "^4.7.0",
     "node-html-constructor": "^2.1.2",
     "node-html-parser": "^6.1.5",
     "nodemailer": "^6.9.1",
