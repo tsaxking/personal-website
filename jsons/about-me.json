@@ -54,7 +54,7 @@
     }, {
         "link": {
             "url": "https://www.armadacorps.org",
-            "text": "Armada Winds"
+            "text": "Armada Corps"
         },
         "description": "Music/Woodwind Caption Head and Sound Engineer (2021 - present)"
     }, {
@@ -209,6 +209,12 @@
     // █▀█ ▀▄▀▄▀ █▀█ █▀▄ █▄▀ ▄█▀ 
 
     "Awards": [{
+        "description": "Spring 2023",
+        "link": {
+            "url": "https://www.alexarosefoundation.org/2023-grantee-recipients",
+            "text": "Alexa Rose Foundation Grant"
+        }
+    }, {
         "link": {
             "url": "https://www.boisestate.edu/undergraduate-research/urca/",
             "text": "Boise State University Undergraduate Research and Creative Activities Grant"
@@ -261,15 +267,15 @@
             "text": "2nd Place | 2018"
         }]
     }, {
-        "text": "Borah High School Awards",
-        "list": [{
-            "text": "Kat Pinney Scholarship | 2018"
-        }, {
-            "text": "Paul Tillitson Scholarship | 2018"
-        }, {
-            "text": "John Phillip Sousa Award | 2018"
-        }]
-    }, {
+    //     "text": "Borah High School Awards",
+    //     "list": [{
+    //         "text": "Kat Pinney Scholarship | 2018"
+    //     }, {
+    //         "text": "Paul Tillitson Scholarship | 2018"
+    //     }, {
+    //         "text": "John Phillip Sousa Award | 2018"
+    //     }]
+    // }, {
         "text": "Boise State University Concert Band Composition Competition | 2018",
         "list": [{
             "link": {
